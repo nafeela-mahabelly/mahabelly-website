@@ -10,14 +10,25 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
-  background-color: #ede0c0;
-  color: #111111;
+  background-color: #f4ecd8;
+  color: #2a2521;
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 /* ── Typography utilities ── */
@@ -25,91 +36,125 @@ body {
 .font-serif    { font-family: var(--font-cormorant); }
 
 /* ── Custom scrollbar ── */
-::-webkit-scrollbar               { width: 6px; }
+::-webkit-scrollbar               { width: 8px; }
 ::-webkit-scrollbar-track         { background: #ede0c0; }
-::-webkit-scrollbar-thumb         { background: #c32025; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover   { background: #111111; }
+::-webkit-scrollbar-thumb         { background: #c32025; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover   { background: #151311; }
 
 /* ── Selection colour ── */
 ::selection {
   background-color: #c32025;
-  color: #ede0c0;
+  color: #f4ecd8;
 }
 
-/* ── Smooth image loading ── */
-img {
-  transition: opacity 0.4s ease;
+/* ── Focus visibility (accessibility) ── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #c32025;
+  outline-offset: 2px;
 }
 
-/* ── Masonry gallery helper ── */
-.masonry-grid {
-  column-count: 3;
-  column-gap: 1rem;
-}
-@media (max-width: 1024px) { .masonry-grid { column-count: 2; } }
-@media (max-width: 640px)  { .masonry-grid { column-count: 1; } }
+/* ── Reusable layout ── */
+.container-x { @apply max-w-7xl mx-auto px-5 sm:px-8; }
 
-.masonry-item {
-  break-inside: avoid;
-  margin-bottom: 1rem;
+/* ── Eyebrow / kicker label ── */
+.kicker {
+  @apply font-sans text-[11px] tracking-ultra uppercase font-semibold;
 }
 
-/* ── Gradient overlays ── */
-.hero-gradient {
-  background: linear-gradient(
-    to bottom,
-    rgba(17, 17, 17, 0.25) 0%,
-    rgba(17, 17, 17, 0.55) 50%,
-    rgba(17, 17, 17, 0.85) 100%
-  );
-}
-
-.section-fade-dark {
-  background: linear-gradient(135deg, #111111 0%, #1a0000 100%);
-}
-
-/* ── Red divider (replaces gold divider) ── */
-.gold-divider {
-  width: 60px;
+/* ── Divider ── */
+.rule {
+  width: 56px;
   height: 2px;
   background: linear-gradient(90deg, transparent, #c32025, transparent);
-  margin: 1.5rem auto;
+  margin: 1.25rem auto;
 }
-
-/* ── Button styles ── */
-.btn-primary {
-  @apply inline-flex items-center gap-2 bg-kerala-green text-white
-         px-8 py-4 text-xs font-sans font-semibold tracking-widest uppercase
-         transition-all duration-300 hover:bg-kerala-green-mid hover:scale-105
-         focus:outline-none focus:ring-2 focus:ring-kerala-green focus:ring-offset-2;
+.rule-gold {
+  background: linear-gradient(90deg, transparent, #b98b34, transparent);
 }
+.rule-left { margin: 1.25rem 0; }
 
+/* ── Buttons ── */
+.btn {
+  @apply inline-flex items-center justify-center gap-2 font-sans text-[13px] font-semibold
+         tracking-normal px-7 py-3 rounded-full transition-all duration-300
+         focus:outline-none;
+}
+.btn-red {
+  @apply btn bg-red text-cream-soft hover:bg-red-dark;
+}
+.btn-ink {
+  @apply btn bg-ink text-cream-soft hover:bg-ink-soft;
+}
 .btn-outline {
-  @apply inline-flex items-center gap-2 border border-kerala-cream text-kerala-cream
-         px-8 py-4 text-xs font-sans font-semibold tracking-widest uppercase
-         transition-all duration-300 hover:bg-kerala-cream hover:text-kerala-charcoal
-         focus:outline-none focus:ring-2 focus:ring-kerala-cream focus:ring-offset-2;
+  @apply btn border border-cream/70 text-cream hover:bg-cream hover:text-ink;
+}
+.btn-outline-ink {
+  @apply btn border border-ink/25 text-ink hover:bg-ink hover:text-cream-soft;
+}
+.btn-ghost {
+  @apply btn text-red hover:text-red-dark px-0 py-1;
 }
 
-.btn-outline-dark {
-  @apply inline-flex items-center gap-2 border border-kerala-green text-kerala-green
-         px-8 py-4 text-xs font-sans font-semibold tracking-widest uppercase
-         transition-all duration-300 hover:bg-kerala-green hover:text-white
-         focus:outline-none focus:ring-2 focus:ring-kerala-green focus:ring-offset-2;
-}
-
-/* ── Nav link underline animation ── */
+/* ── Link underline animation ── */
 .nav-link {
   position: relative;
 }
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 0;
   width: 0;
-  height: 1px;
-  background-color: currentColor;
+  height: 1.5px;
+  background-color: #c32025;
   transition: width 0.3s ease;
 }
-.nav-link:hover::after { width: 100%; }
+.nav-link:hover::after,
+.nav-link[data-active='true']::after { width: 100%; }
+
+/* ── Prose for long-form legal / story pages ── */
+.prose-belly {
+  @apply text-charcoal-soft leading-relaxed;
+}
+.prose-belly h2 {
+  @apply font-display text-2xl md:text-3xl text-ink font-bold mt-12 mb-4;
+}
+.prose-belly h3 {
+  @apply font-sans text-base font-bold text-ink uppercase tracking-wide mt-8 mb-3;
+}
+.prose-belly p  { @apply mb-4; }
+.prose-belly ul { @apply list-disc pl-6 mb-4 space-y-1.5; }
+.prose-belly a  { @apply text-red underline underline-offset-2 hover:text-red-dark; }
+.prose-belly strong { @apply text-ink font-semibold; }
+
+/* ── Hero gradient scrim ── */
+.hero-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 13, 11, 0.30) 0%,
+    rgba(15, 13, 11, 0.45) 45%,
+    rgba(15, 13, 11, 0.82) 100%
+  );
+}
+
+/* ── Grain / texture helper ── */
+.paper {
+  background-color: #f4ecd8;
+  background-image:
+    radial-gradient(rgba(185, 139, 52, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ── Card hover lift ── */
+.lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.lift:hover {
+  transform: translateY(-4px);
+}
+
+img { transition: opacity 0.4s ease; }

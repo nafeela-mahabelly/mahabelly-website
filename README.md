@@ -1,95 +1,81 @@
 # Mahabelly Website
 
-Premium Next.js 15 website for Mahabelly — authentic Kerala cuisine.
+Static, SEO-focused marketing site for **Mahabelly** — contemporary Kerala cuisine, Delhi NCR.
+Built with Next.js 15 (App Router) + Tailwind CSS, exported as a fully static site.
 
-## Quick Start
+> Born in Delhi. Rooted in Kerala. Served with soul.
+
+## Quick start
 
 ```bash
 npm install
-npm run dev
+npm run dev      # http://localhost:3000
+npm run build    # static export → ./out
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+`next.config.ts` sets `output: 'export'`, so `npm run build` produces a static
+`out/` folder you can host on any static host (Vercel, Netlify, S3, Nginx…).
 
-## Tech Stack
-
-- **Next.js 15** (App Router)
-- **React 19**
-- **TypeScript**
-- **Tailwind CSS v3**
-- **Framer Motion v11**
-- **Lucide React** (icons)
-- **Google Fonts** — Playfair Display, Cormorant Garamond, Inter
-
-## Project Structure
+## Structure
 
 ```
-mahabelly-website/
-├── app/
-│   ├── globals.css          # Design system: tokens, utilities, base styles
-│   ├── layout.tsx           # Root layout: fonts, SEO metadata
-│   └── page.tsx             # Home page — assembles all sections
-├── components/
-│   ├── ui/
-│   │   └── FadeInView.tsx   # Reusable scroll-triggered animation wrapper
-│   ├── Navigation.tsx       # Sticky nav (transparent → solid on scroll)
-│   ├── Hero.tsx             # Full-screen cinematic hero with parallax
-│   ├── BrandStory.tsx       # Alternating image/text storytelling
-│   ├── SignatureExperiences.tsx  # Premium food card grid
-│   ├── WhyMahabelly.tsx     # 6-pillar hospitality section
-│   ├── Locations.tsx        # Location cards for all 5 outlets
-│   ├── Gallery.tsx          # Masonry photo gallery
-│   ├── Testimonials.tsx     # Auto-rotating review carousel
-│   ├── CallToAction.tsx     # Full-bleed CTA with Order Online
-│   └── Footer.tsx           # Multi-column footer with newsletter
-├── public/
-│   ├── logo.svg
-│   └── favicon.svg
-├── next.config.ts
-├── tailwind.config.ts
-├── tsconfig.json
-└── package.json
+app/
+  layout.tsx            # fonts, global metadata, Organization/WebSite JSON-LD, chrome
+  page.tsx              # homepage (composed from components/home/*)
+  our-story/            # founder story + timeline
+  menu/                 # outlet selector  →  menu/[slug] (web-readable menus)
+  locations/            # all outlets      →  locations/[slug] (per-outlet + map + Restaurant JSON-LD)
+  canteen/              # Mahabelly Canteen format
+  sadhya-festivals/     # festivals + FAQ (FAQPage JSON-LD)
+  catering/             # catering + enquiry form
+  our-people/  press/  reviews/  contact/
+  policies/             # index  →  policies/[slug] (privacy, terms, cancellation-refund, shipping-delivery, accessibility)
+  sitemap.ts  robots.ts  not-found.tsx
+components/
+  layout/               # Navbar, Footer, FloatingButtons (call+WhatsApp), MobileActionBar, PageHero, CTABand
+  home/                 # homepage sections
+  menu/  forms/  ui/     # MenuView, Catering/Contact forms, shared UI
+lib/
+  site.ts               # business info, nav, outlets, order/reserve links   ← EDIT ME
+  menus.ts              # the three outlet menus (transcribed from PDFs)
+  content.ts            # story, experiences, press, reviews, people, catering, FAQs
+  policies.ts           # full legal policy text (client-supplied)
+  seo.ts                # per-page metadata + structured-data helpers
+public/
+  brand/  art/  photos/  festivals/  menus/   # optimised brand assets & photos
 ```
 
-## Colour Tokens (Tailwind)
+## Editing content
 
-| Token                    | Hex       | Use                       |
-|--------------------------|-----------|---------------------------|
-| `kerala-green`           | `#1B4D3E` | Primary brand green       |
-| `kerala-green-dark`      | `#0F2E25` | Dark sections, overlays   |
-| `kerala-green-mid`       | `#2A6B57` | Mid-tone accents          |
-| `kerala-gold`            | `#C9A84C` | Accent, CTAs, icons       |
-| `kerala-gold-light`      | `#E2C97E` | Hover states, highlights  |
-| `kerala-cream`           | `#FAF8F3` | Light background          |
-| `kerala-charcoal`        | `#2C2C2C` | Body text                 |
+Almost everything lives in `lib/`. Common edits:
 
-## Typography
+- **Phone / email / links / outlets** → `lib/site.ts` (`SITE`, `LINKS`, `OUTLETS`)
+- **Menus** → `lib/menus.ts`
+- **Press, reviews, people, experiences** → `lib/content.ts`
+- **Legal policies** → `lib/policies.ts`
 
-- **Headings**: Playfair Display (`font-display`)
-- **Subheadings / Pull quotes**: Cormorant Garamond (`font-serif`)
-- **Body / UI**: Inter (`font-sans`)
+## ⚠️ Placeholders to confirm before launch
 
-## Deployment (Vercel)
+These are wired but use provisional values — search the code for them:
 
-```bash
-npm run build   # Local build check
-vercel deploy   # Deploy to Vercel
+- **Order Online** → `LINKS.orderOnline` = `https://mahabelly.co/onlineorder/` (confirmed)
+- **Reserve** → `LINKS.reserve` = `https://linktr.ee/mahabelly` (confirmed)
+- **Zomato / Swiggy** per-outlet links → `LINKS.zomato` / `LINKS.swiggy` (currently `#`)
+- **Forms** (Catering, Contact, Newsletter) are static — Catering opens a prefilled
+  WhatsApp, Contact opens a prefilled email. Wire a real form endpoint if you want
+  server-side submissions (see notes in `components/forms/*`).
+- **Reviews** in `lib/content.ts` (`REVIEWS`) are placeholders — replace with verified,
+  source-linked guest reviews.
+- **Outlet addresses / hours** — Saidulajab & Vasant Kunj are exact; Saket, Lado Serai,
+  Gurgaon and Sonipat use area-level info — confirm exact addresses & hours in `OUTLETS`.
+- **Policy effective / last-updated dates** and the named Grievance Officer/vendors —
+  fill in `lib/policies.ts` (see the client's implementation note).
+- **Legal entity** = `Fenn & Jacob Associates LLP` (confirmed).
+
+## Notes
+
+- Floating **Call + WhatsApp** buttons and the mobile sticky **Reserve / Order** bar are global.
+- Reduced-motion is respected throughout; images are optimised (WebP/AVIF-friendly sizes).
+- SEO: unique titles + meta + canonicals per page, XML sitemap, robots.txt, and JSON-LD
+  (Organization, WebSite, BreadcrumbList, Restaurant, Menu, FAQPage).
 ```
-
-Set your custom domain `mahabelly.com` in Vercel's project settings.
-
-## Replacing Placeholder Images
-
-All images currently use Unsplash URLs. Replace them with your own photography:
-1. Add images to `/public/images/`
-2. Update `src` props in each component
-3. Remove `images.unsplash.com` from `next.config.ts` remotePatterns if no longer needed
-
-## Online Ordering
-
-The Order Online button redirects to:
-`https://mahabelly.co/onlineorder/`
-
-Update this URL in `components/Hero.tsx`, `components/SignatureExperiences.tsx`,
-`components/CallToAction.tsx`, and `components/Navigation.tsx` when the new
-domain is live.

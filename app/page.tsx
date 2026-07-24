@@ -1,35 +1,37 @@
-import Navigation          from '@/components/Navigation'
-import Hero                from '@/components/Hero'
-import BrandStory          from '@/components/BrandStory'
-import Menu               from '@/components/Menu'
-import SignatureExperiences from '@/components/SignatureExperiences'
-import WhyMahabelly        from '@/components/WhyMahabelly'
-import Locations           from '@/components/Locations'
-import OurBrands           from '@/components/OurBrands'
-import Gallery             from '@/components/Gallery'
-import InstagramFeed       from '@/components/InstagramFeed'
-import Testimonials        from '@/components/Testimonials'
-import CallToAction        from '@/components/CallToAction'
-import Footer              from '@/components/Footer'
-import WhatsAppButton      from '@/components/WhatsAppButton'
+import Hero from '@/components/home/Hero'
+import UtilityStrip from '@/components/home/UtilityStrip'
+import StorySection from '@/components/home/StorySection'
+import ExploreKerala from '@/components/home/ExploreKerala'
+import Experiences from '@/components/home/Experiences'
+import CanteenTeaser from '@/components/home/CanteenTeaser'
+import SadhyaSection from '@/components/home/SadhyaSection'
+import Footprint from '@/components/home/Footprint'
+import FeaturedOutlets from '@/components/home/FeaturedOutlets'
+import PeopleTeaser from '@/components/home/PeopleTeaser'
+import PressStrip from '@/components/home/PressStrip'
+import Reviews from '@/components/Reviews'
+import CateringTeaser from '@/components/home/CateringTeaser'
+import Gallery from '@/components/home/Gallery'
+import CTABand from '@/components/layout/CTABand'
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="overflow-x-hidden">
-      <Navigation />
+    <>
       <Hero />
-      <BrandStory />
-      <Menu />
-      <SignatureExperiences />
-      <WhyMahabelly />
-      <Locations />
-      <OurBrands />
+      <UtilityStrip />
+      <StorySection />
+      <ExploreKerala />
+      <Experiences />
+      <CanteenTeaser />
+      <SadhyaSection />
+      <Footprint />
+      <FeaturedOutlets />
+      <PeopleTeaser />
+      <PressStrip />
+      <Reviews />
+      <CateringTeaser />
       <Gallery />
-      <InstagramFeed />
-      <Testimonials />
-      <CallToAction />
-      <Footer />
-      <WhatsAppButton />
-    </main>
+      <CTABand />
+    </>
   )
 }
