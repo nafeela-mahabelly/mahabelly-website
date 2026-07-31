@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     'Malabar biryani Delhi', 'Kerala seafood restaurant', 'Mahabelly', 'Mahabelly Canteen',
   ],
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large' } },
-  icons: { icon: '/favicon.svg' },
+  // Favicons resolved via app/icon.png, app/favicon.ico & app/apple-icon.png (file convention)
   openGraph: {
     type: 'website',
     locale: 'en_IN',
