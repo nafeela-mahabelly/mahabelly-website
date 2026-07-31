@@ -4,13 +4,13 @@ import StorySection from '@/components/home/StorySection'
 import ExploreKerala from '@/components/home/ExploreKerala'
 import Experiences from '@/components/home/Experiences'
 import CanteenTeaser from '@/components/home/CanteenTeaser'
-import SadhyaSection from '@/components/home/SadhyaSection'
-import Footprint from '@/components/home/Footprint'
 import FeaturedOutlets from '@/components/home/FeaturedOutlets'
-import PeopleTeaser from '@/components/home/PeopleTeaser'
+import Footprint from '@/components/home/Footprint'
+import SadhyaSection from '@/components/home/SadhyaSection'
+import CateringTeaser from '@/components/home/CateringTeaser'
 import PressStrip from '@/components/home/PressStrip'
 import Reviews from '@/components/Reviews'
-import CateringTeaser from '@/components/home/CateringTeaser'
+import GoldTeaser from '@/components/home/GoldTeaser'
 import Gallery from '@/components/home/Gallery'
 import CTABand from '@/components/layout/CTABand'
 
@@ -19,18 +19,33 @@ export default function HomePage() {
     <>
       <Hero />
       <UtilityStrip />
+
+      {/* Our Story (includes Our People) */}
       <StorySection />
       <ExploreKerala />
       <Experiences />
+
+      {/* Our Brands — Mahabelly Canteen + outlets/locations */}
       <CanteenTeaser />
-      <SadhyaSection />
-      <Footprint />
       <FeaturedOutlets />
-      <PeopleTeaser />
+      <Footprint />
+
+      {/* Events */}
+      <SadhyaSection />
+
+      {/* Catering */}
+      <CateringTeaser />
+
+      {/* In the News — press + testimonials */}
       <PressStrip />
       <Reviews />
-      <CateringTeaser />
+
+      {/* Mahabelly Gold */}
+      <GoldTeaser />
+
+      {/* Gallery */}
       <Gallery />
+
       <CTABand />
     </>
   )

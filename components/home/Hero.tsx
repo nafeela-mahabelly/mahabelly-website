@@ -9,16 +9,16 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="/photos/hero-sadhya.jpg"
-          alt="A colourful Kerala Sadhya served on a banana leaf"
+          src="/photos/hero-coastline.jpg"
+          alt="Illustration of the Kerala coastline with fishing canoes on the backwaters"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_38%] motion-safe:animate-ken-burns"
+          className="object-cover object-[center_42%] motion-safe:animate-ken-burns"
         />
-        {/* Left-weighted scrim keeps the food bright on the right, text legible on the left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/55 to-ink/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-ink/25" />
+        {/* Left-weighted scrim keeps the artwork bright on the right, text legible on the left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/60 to-ink/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-ink/30" />
       </div>
 
       {/* Botanical accent */}

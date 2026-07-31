@@ -41,7 +41,7 @@ export default function CanteenPage() {
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <Reveal className="flex justify-center order-2 lg:order-1">
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-cream-soft border border-gold/30 flex items-center justify-center shadow-xl">
-              <Image src="/brand/canteen-kathakali.png" alt="Mahabelly Canteen" width={340} height={340} className="w-56 md:w-64 h-auto object-contain" />
+              <Image src="/brand/canteen-logo.png" alt="Mahabelly Canteen" width={340} height={340} className="w-56 md:w-60 h-auto object-contain" />
             </div>
           </Reveal>
           <Reveal delay={0.1} className="order-1 lg:order-2">

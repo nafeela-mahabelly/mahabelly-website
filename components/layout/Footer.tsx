@@ -11,10 +11,10 @@ const columns = [
     title: 'Explore',
     links: [
       { label: 'Our Story', href: '/our-story' },
-      { label: 'Menu', href: '/menu' },
-      { label: 'Locations', href: '/locations' },
-      { label: 'Mahabelly Canteen', href: '/canteen' },
-      { label: 'Our People', href: '/our-people' },
+      { label: 'Our Brands', href: '/our-brands' },
+      { label: 'Menus & Locations', href: '/our-brands' },
+      { label: 'Events', href: '/events' },
+      { label: 'Gallery', href: '/#gallery' },
     ],
   },
   {
@@ -22,8 +22,8 @@ const columns = [
     links: [
       { label: 'Reserve a Table', href: LINKS.reserve, external: true },
       { label: 'Order Online', href: LINKS.orderOnline },
+      { label: 'Book Onam ’26', href: LINKS.onam, external: true },
       { label: 'Catering', href: '/catering' },
-      { label: 'Sadhya & Festivals', href: '/sadhya-festivals' },
       { label: 'Contact Us', href: '/contact' },
     ],
   },
@@ -31,8 +31,7 @@ const columns = [
     title: 'Discover',
     links: [
       { label: 'In the News', href: '/press' },
-      { label: 'Reviews', href: '/reviews' },
-      { label: 'Gallery', href: '/#gallery' },
+      { label: 'Mahabelly Gold', href: '/mahabelly-gold' },
       { label: 'Instagram', href: SOCIALS[0].href, external: true },
       { label: 'Careers', href: '/contact' },
     ],
@@ -66,7 +65,7 @@ export default function Footer() {
               alt="Mahabelly"
               width={180}
               height={90}
-              className="h-16 w-auto object-contain mb-5"
+              className="h-24 w-auto object-contain mb-5"
             />
             <p className="font-serif italic text-lg text-cream/70 mb-4">{SITE.masterLine}</p>
             <p className="font-sans text-sm leading-relaxed text-cream/50 mb-6 max-w-sm">{AWARD}.</p>

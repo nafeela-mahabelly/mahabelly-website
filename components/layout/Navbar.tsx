@@ -5,13 +5,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
-import { Menu, X, ChevronDown, CalendarCheck, ShoppingBag } from 'lucide-react'
-import { PRIMARY_NAV, MORE_NAV, ALL_NAV, LINKS } from '@/lib/site'
+import { Menu, X, CalendarCheck, ShoppingBag, Sparkles } from 'lucide-react'
+import { ALL_NAV, LINKS } from '@/lib/site'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const [moreOpen, setMoreOpen] = useState(false)
   const pathname = usePathname()
   const reduce = useReducedMotion()
 
@@ -27,8 +26,8 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [open])
 
-  // Close menus on route change
-  useEffect(() => { setOpen(false); setMoreOpen(false) }, [pathname])
+  // Close menu on route change
+  useEffect(() => { setOpen(false) }, [pathname])
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href)
@@ -55,84 +54,42 @@ export default function Navbar() {
               height={90}
               priority
               className={`w-auto object-contain transition-all duration-300 ${
-                solid ? 'h-16' : 'h-16 drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]'
+                solid ? 'h-[72px]' : 'h-[72px] drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]'
               }`}
             />
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden xl:flex items-center gap-6" aria-label="Primary">
-            {PRIMARY_NAV.map((l) => (
+          {/* Desktop nav — all sections inline (no dropdown) */}
+          <nav className="hidden xl:flex items-center gap-4 2xl:gap-5" aria-label="Primary">
+            {ALL_NAV.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 data-active={isActive(l.href)}
-                className={`nav-link font-sans text-[13.5px] font-medium tracking-normal transition-colors ${linkColor} ${
+                className={`nav-link font-sans text-[12.5px] font-medium tracking-normal whitespace-nowrap transition-colors ${linkColor} ${
                   isActive(l.href) ? 'opacity-100' : 'opacity-85 hover:opacity-100'
                 }`}
               >
                 {l.label}
               </Link>
             ))}
-
-            {/* More dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setMoreOpen(true)}
-              onMouseLeave={() => setMoreOpen(false)}
-            >
-              <button
-                onClick={() => setMoreOpen((v) => !v)}
-                aria-expanded={moreOpen}
-                aria-haspopup="true"
-                className={`nav-link flex items-center gap-1 font-sans text-[13.5px] font-medium tracking-normal transition-colors ${linkColor}`}
-              >
-                More <ChevronDown size={13} className={`transition-transform ${moreOpen ? 'rotate-180' : ''}`} />
-              </button>
-              <AnimatePresence>
-                {moreOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.18 }}
-                    className="absolute right-0 top-full pt-3"
-                  >
-                    <ul className="min-w-[190px] bg-cream-soft border border-ink/10 rounded-2xl shadow-xl py-2 overflow-hidden">
-                      {MORE_NAV.map((l) => (
-                        <li key={l.href}>
-                          <Link
-                            href={l.href}
-                            className={`block px-5 py-2.5 font-sans text-[13.5px] tracking-normal text-charcoal hover:bg-cream hover:text-red transition-colors ${
-                              isActive(l.href) ? 'text-red' : ''
-                            }`}
-                          >
-                            {l.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
           </nav>
 
           {/* Desktop CTAs */}
-          <div className="hidden xl:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-2.5">
             <a
               href={LINKS.reserve}
               target="_blank"
               rel="noopener noreferrer"
-              className={`btn ${solid ? 'btn-outline-ink' : 'btn-outline'} !px-5 !py-2.5`}
+              className={`btn ${solid ? 'btn-outline-ink' : 'btn-outline'} !px-4 !py-2.5`}
             >
               <CalendarCheck size={14} /> Reserve
             </a>
-            <Link
-              href={LINKS.orderOnline}
-              className="btn-red !px-5 !py-2.5"
-            >
+            <Link href={LINKS.orderOnline} className="btn-red !px-4 !py-2.5">
               <ShoppingBag size={14} /> Order
+            </Link>
+            <Link href={LINKS.onam} className="btn bg-gold text-ink hover:bg-gold-light !px-4 !py-2.5">
+              <Sparkles size={14} /> Onam ’26
             </Link>
           </div>
 
@@ -177,13 +134,18 @@ export default function Navbar() {
                 </motion.div>
               ))}
             </nav>
-            <div className="px-8 mt-6 grid grid-cols-2 gap-3">
-              <a href={LINKS.reserve} target="_blank" rel="noopener noreferrer" className="btn-outline w-full">
-                <CalendarCheck size={15} /> Reserve
-              </a>
-              <Link href={LINKS.orderOnline} className="btn-red w-full">
-                <ShoppingBag size={15} /> Order
+            <div className="px-8 mt-6 space-y-3">
+              <Link href={LINKS.onam} className="btn bg-gold text-ink hover:bg-gold-light w-full">
+                <Sparkles size={15} /> Book Onam ’26
               </Link>
+              <div className="grid grid-cols-2 gap-3">
+                <a href={LINKS.reserve} target="_blank" rel="noopener noreferrer" className="btn-outline w-full">
+                  <CalendarCheck size={15} /> Reserve
+                </a>
+                <Link href={LINKS.orderOnline} className="btn-red w-full">
+                  <ShoppingBag size={15} /> Order
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}

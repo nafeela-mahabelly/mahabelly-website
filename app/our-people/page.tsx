@@ -9,7 +9,7 @@ import { PEOPLE_GROUPS } from '@/lib/content'
 export const metadata = pageMeta({
   title: 'Our People | The Mahabelly Family',
   description:
-    'Meet the people behind Mahabelly — the founders, the family that runs it today, and the ~150-strong team who serve Kerala with soul every day.',
+    'Meet the people behind Mahabelly — the founders, the family that runs it today, and the ~160-strong team who serve Kerala with soul every day.',
   path: '/our-people',
 })
 
@@ -44,14 +44,14 @@ export default function OurPeoplePage() {
         </div>
       </section>
 
-      {/* 150 family */}
+      {/* 160 family */}
       <section className="bg-ink text-cream py-20 md:py-24">
         <div className="container-x text-center max-w-3xl mx-auto">
           <Reveal>
-            <p className="font-display text-6xl md:text-7xl font-black text-red-light">≈ 150</p>
+            <p className="font-display text-6xl md:text-7xl font-black text-red-light">≈ 160</p>
             <p className="font-serif italic text-2xl text-cream/80 mt-3">One Mahabelly family.</p>
             <p className="text-cream/60 mt-6 leading-relaxed">
-              Around 150 people cook, serve, manage, deliver and carry the story forward every day. Many have grown with the brand — from steward to captain, from cook to kitchen leader. Their care is the real recipe.
+              Around 160 people cook, serve, manage, deliver and carry the story forward every day. Many have grown with the brand — from steward to captain, from cook to kitchen leader. Their care is the real recipe.
             </p>
           </Reveal>
         </div>

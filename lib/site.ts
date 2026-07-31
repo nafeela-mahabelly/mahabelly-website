@@ -24,6 +24,8 @@ export const LINKS = {
   // Direct online ordering (Mahabelly)
   orderDirect: 'https://mahabelly.co/onlineorder/order',
   reserve: 'https://linktr.ee/mahabelly',
+  // Onam '26 booking hub (internal page listing the Razorpay options)
+  onam: '/onam-2026',
   // Placeholder form / enquiry destinations — to be replaced by the client
   cateringEnquiry: '#',
   pressKit: '#',
@@ -82,18 +84,15 @@ export function waLink(message: string) {
 // ── Navigation (brief §3 Information Architecture) ───────────────
 export const PRIMARY_NAV = [
   { label: 'Our Story', href: '/our-story' },
-  { label: 'Menu', href: '/menu' },
-  { label: 'Locations', href: '/locations' },
-  { label: 'Canteen', href: '/canteen' },
-  { label: 'Sadhya & Festivals', href: '/sadhya-festivals' },
+  { label: 'Our Brands', href: '/our-brands' },
+  { label: 'Events', href: '/events' },
   { label: 'Catering', href: '/catering' },
   { label: 'Gallery', href: '/#gallery' },
+  { label: 'In the News', href: '/press' },
 ]
 
 export const MORE_NAV = [
-  { label: 'Our People', href: '/our-people' },
-  { label: 'In the News', href: '/press' },
-  { label: 'Reviews', href: '/reviews' },
+  { label: 'Mahabelly Gold', href: '/mahabelly-gold' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -103,7 +102,7 @@ export const ALL_NAV = [...PRIMARY_NAV, ...MORE_NAV]
 export const STATS = [
   { value: '2015', label: 'The year it began' },
   { value: '6', label: 'Locations across Delhi NCR & Sonipat' },
-  { value: '150', label: 'One Mahabelly family' },
+  { value: '160', label: 'One Mahabelly family' },
   { value: 'Lakhs', label: 'Of guests, & countless Kerala cravings' },
 ]
 

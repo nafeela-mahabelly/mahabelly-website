@@ -12,7 +12,7 @@ export default function PeopleTeaser() {
             <span className="kicker text-gold-light">The People Behind the Plates</span>
             <div className="rule rule-left rule-gold" />
             <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight">
-              Built by around 150 people.
+              Built by around 160 people.
             </h2>
             <p className="text-cream/70 leading-relaxed mt-6">
               Mahabelly is built by chefs, servers, stewards, managers, delivery teams and many others whose care is felt in every meal. Meet the people who make the brand what it is.

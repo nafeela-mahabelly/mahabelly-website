@@ -32,7 +32,7 @@ export default function CanteenTeaser() {
         <Reveal delay={0.1} className="flex justify-center">
           <div className="relative">
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-cream-soft border border-gold/30 flex items-center justify-center shadow-xl">
-              <Image src="/brand/canteen-kathakali.png" alt="Mahabelly Canteen" width={320} height={320} className="w-52 md:w-64 h-auto object-contain" />
+              <Image src="/brand/canteen-logo.png" alt="Mahabelly Canteen" width={320} height={320} className="w-52 md:w-60 h-auto object-contain" />
             </div>
             <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gold text-ink font-sans text-[10px] tracking-widest uppercase rounded-full px-4 py-1.5 whitespace-nowrap shadow-lg">
               Al Faham · Shawaya · Mandhi

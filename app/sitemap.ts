@@ -8,8 +8,9 @@ export const dynamic = 'force-static'
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url
   const staticPaths = [
-    '', '/our-story', '/menu', '/locations', '/canteen',
-    '/sadhya-festivals', '/catering', '/order', '/our-people', '/press', '/reviews', '/contact', '/policies',
+    '', '/our-story', '/our-brands', '/menu', '/locations', '/canteen',
+    '/events', '/sadhya-festivals', '/onam-2026', '/catering', '/order', '/mahabelly-gold',
+    '/our-people', '/press', '/reviews', '/contact', '/policies',
   ]
   const routes = [
     ...staticPaths,

@@ -7,7 +7,7 @@ export const EXPERIENCES = [
   {
     title: 'Onam Sadhya',
     blurb: 'Kerala’s grand vegetarian feast, traditionally served on a banana leaf.',
-    image: '/photos/sadhya-spread.jpg',
+    image: '/photos/exp-onam.jpg',
   },
   {
     title: 'Appam & Stew',
@@ -32,7 +32,7 @@ export const EXPERIENCES = [
   {
     title: 'Kerala Meals',
     blurb: 'A complete, comforting everyday spread of rice, curries and accompaniments.',
-    image: '/photos/sadhya-serving.jpg',
+    image: '/photos/exp-kerala-meals.jpg',
   },
 ]
 
@@ -41,41 +41,76 @@ export const TIMELINE = [
   {
     year: '2006',
     title: 'A craving for home',
-    text: 'Three childhood friends from Kerala — Zachariah Jacob, Thomas Fenn and Dr Prem Kiran — arrive in Delhi and share a longing for the food they grew up with.',
+    text: 'School friends Zachariah Jacob and Thomas Fenn move from Kerala to Delhi to study at St. Stephen’s College. Like most Malayalis living away from home, they begin missing the food they grew up with. During college, they often joke that if their careers don’t work out, they can always open a small “Mallu dhaba” outside campus. Neither drops out — but the idea stays with them.',
+  },
+  {
+    year: '2014',
+    title: 'The old idea returns',
+    text: 'By 2014, Zachariah is practising law in Delhi and Thomas is leading a children’s museum in Gurgaon. During one of their usual “catch-ups”, they start talking about the old college idea again. Delhi still doesn’t have enough places serving the Kerala food they miss. What began as a joke slowly starts sounding like something worth attempting — and they decide to take the plunge.',
   },
   {
     year: '2015',
     title: 'Mahabelly is born',
-    text: 'Mahabelly opens in Delhi with a simple belief: Kerala’s cuisine deserves a larger stage than dosa, idli and sambar.',
+    text: 'After months of searching, they find a space behind DLF Place Mall in Saket — tucked away in a back alley. Their school friend Dr Prem Kiran joins them. None of the three has any formal restaurant experience; what they have is a deep love for Kerala food, plenty of determination, and the support of friends and family. Mahabelly opens with a simple belief: Kerala’s cuisine and culture deserve a much larger stage. Dr Shashi Tharoor launches the first outlet on 23 March 2015, and his tweet travels quickly — soon the little restaurant behind the mall is the talk of the town.',
   },
   {
     year: '2016 – 2019',
-    title: 'A growing footprint',
-    text: 'Word travels. New kitchens and outlets open across Delhi NCR as more diners discover coastal curries, toddy-shop plates and the Onam Sadhya.',
+    title: 'Word begins to travel',
+    text: 'Customers return with their friends and families. More Malayalis discover a familiar taste of home, while many others experience Kerala food for the first time. A Gurgaon kitchen follows, letting Mahabelly reach more homes and more tables. Slowly, the college dream begins to grow into a real brand.',
+  },
+  {
+    year: '2020',
+    title: 'The year everything stopped',
+    text: 'When the pandemic arrives, the restaurant business comes to an almost complete standstill — one of Mahabelly’s most difficult periods. But customers and the wider community stand by the brand, especially through deliveries. With their support and the commitment of the team, Mahabelly makes it through. That support is something we will never forget.',
+  },
+  {
+    year: '2023',
+    title: 'A new community',
+    text: 'Mahabelly opens at O.P. Jindal Global University in Sonipat — its first campus outlet and a completely new kind of audience. The team also introduces its Kerala–Gulf menu, with favourites such as Al Faham, Shawaya and Shawarma. The response is immediate, and the menu soon becomes a favourite within the Jindal community.',
   },
   {
     year: '2024',
-    title: 'Mahabelly Canteen',
-    text: 'A younger, everyday format launches — comforting Kerala meals alongside Kerala’s own take on Al Faham, Shawaya and Shawarma.',
+    title: 'Our craziest year yet',
+    text: 'Mahabelly opens four new locations and also says goodbye to Mahabelly GK2. It is a year filled with excitement, difficult decisions, constant learning and very little sleep — in other words, a fairly typical year in the restaurant business, only much busier.',
+  },
+  {
+    year: 'Oct 2024',
+    title: 'Mahabelly Canteen & the base kitchen',
+    text: 'Mahabelly Canteen launches as a younger, more casual expression of the brand, bringing together comforting Kerala meals and Kerala’s much-loved versions of Gulf favourites. Mahabelly also opens a base kitchen and central store in Lado Sarai, helping the team improve food production, consistency and standardisation as the business grows.',
+  },
+  {
+    year: 'Dec 2024',
+    title: 'Back where it all began',
+    text: 'Mahabelly Saket moves from its original back-alley location into a new home inside DLF Avenue Mall. Nearly ten years after launching the first outlet, Dr Shashi Tharoor returns to inaugurate Mahabelly Saket once again — an emotional full-circle moment and a reminder of how far the journey has come.',
+  },
+  {
+    year: '2025',
+    title: 'Canteen comes to Vasant Kunj',
+    text: 'Mahabelly Canteen opens inside The Kunj Mall in Vasant Kunj, bringing its everyday Kerala format to another neighbourhood and a new community.',
   },
   {
     year: 'Today',
     title: 'One story, many tables',
-    text: 'Run by Zachariah Jacob and his family, Mahabelly is a family of restaurants and kitchens across Saket, Saidulajab, Vasant Kunj, Lado Serai, Gurgaon and Sonipat — carried forward by around 150 people.',
+    text: 'Today, Mahabelly is run by Zachariah Jacob and his family — Yacoob Jacob, Jacob Kelachadra and Sarah Mohan — with restaurants and kitchens across Saket, Saidulajab, Vasant Kunj, Lado Sarai, Gurgaon and Sonipat. But the number we are proudest of is not the number of outlets. It is the Mahabelly family of around 160 people who cook, serve, manage, deliver and carry this story forward every day.',
+  },
+  {
+    year: 'The road ahead',
+    title: 'More Malayali food for more people',
+    text: 'The dream is not simply to open more restaurants. It is to help more people discover the depth and diversity of Kerala cuisine, to celebrate Kerala’s food and culture with honesty, warmth and pride, and to grow without losing the feeling that made Mahabelly special in the first place. What began as a craving shared by two homesick college students has become a much larger mission: more Malayali food for more people.',
   },
 ]
 
 // ── Our People (brief §6F) ──────────────────────────────────────
 export const FOUNDERS = {
   names: ['Zachariah Jacob', 'Thomas Fenn', 'Dr Prem Kiran'],
-  text: 'Mahabelly was founded in Delhi in 2015 by three childhood friends who shared a love for Kerala food and a belief that its story deserved a larger stage. Today the brand is run by Zachariah Jacob and his family, who continue to carry its original purpose forward — to serve Kerala with honesty, warmth and soul.',
+  text: 'Mahabelly was founded in Delhi in 2015 by three childhood friends who shared a love for Kerala food and a belief that its story deserved a larger stage. Today the brand is run by Zachariah Jacob and his family — Yacoob Jacob, Jacob Kelachadra and Sarah Mohan — who continue to carry its original purpose forward: to serve Kerala with honesty, warmth and soul.',
 }
 
 export const PEOPLE_GROUPS = [
   {
     title: 'The founders',
     text: 'Zachariah Jacob, Thomas Fenn and Dr Prem Kiran — three friends from Kerala who turned a craving for home into a restaurant brand.',
-    image: '/photos/storefront-onam.jpg',
+    image: '/photos/team-mahabelly.jpg',
   },
   {
     title: 'Present stewardship',
@@ -153,26 +188,29 @@ export const PRESS_ARTICLES: PressItem[] = [
   { title: 'Art & Culture Archives', publication: 'The Tribune', href: 'https://www.thetribuneonline.com/art-culture-archives58.html' },
 ]
 
+// publication = the YouTube channel name
 export const PRESS_VIDEOS: PressItem[] = [
-  { title: 'Kerala Food Experience', publication: 'YouTube Shorts', href: 'https://www.youtube.com/shorts/0wPoABUAXg8' },
-  { title: 'Mahabelly Review', publication: 'YouTube', href: 'https://www.youtube.com/watch?v=WlA3fYP45a8' },
-  { title: 'Mahabelly Review', publication: 'YouTube', href: 'https://youtu.be/ZsYONiihKnU' },
-  { title: 'The Thali Tradition', publication: 'YouTube', href: 'https://youtu.be/_O4gd4rdC48' },
-  { title: 'Dining at Mahabelly', publication: 'YouTube', href: 'https://youtu.be/BADr5TMr0Q0' },
-  { title: 'Food Vlog', publication: 'YouTube', href: 'https://youtu.be/81xAC8TDL2g' },
-  { title: 'Food Vlog', publication: 'YouTube', href: 'https://youtu.be/5YCoQgwucrY' },
-  { title: 'Food Vlog', publication: 'YouTube', href: 'https://www.youtube.com/watch?v=LxK6avuFBTM' },
+  { title: 'India’s Best Restaurants: Mahabelly', publication: 'Rocky Singh', href: 'https://www.youtube.com/watch?v=_Lne-Uu4ihw' },
+  { title: 'Punjabi Guy Tries the Best Malayali Food', publication: 'OK Tested', href: 'https://www.youtube.com/watch?v=_O4gd4rdC48' },
+  { title: 'The Best Kerala Food in Delhi', publication: 'Mister Tikku', href: 'https://www.youtube.com/shorts/0wPoABUAXg8' },
+  { title: 'Deep Dive Into Kerala Cuisine', publication: 'Food Talk India', href: 'https://www.youtube.com/watch?v=81xAC8TDL2g' },
+  { title: 'Malayali ‘Meals’ — Kerala’s Everyman Thali', publication: 'The Thali Tradition', href: 'https://www.youtube.com/watch?v=WlA3fYP45a8' },
+  { title: 'Kerala Thali, Fish Curry & Prawn Fry', publication: 'Times Foodie', href: 'https://youtu.be/ZsYONiihKnU' },
+  { title: 'Food From Kerala, Served in Delhi', publication: 'EazyDiner', href: 'https://youtu.be/BADr5TMr0Q0' },
+  { title: 'A New Kerala Restaurant in South Delhi', publication: 'Lifestyle Today News', href: 'https://youtu.be/5YCoQgwucrY' },
+  { title: 'Eating at Mahabelly', publication: 'Chomping Champion', href: 'https://www.youtube.com/watch?v=LxK6avuFBTM' },
 ]
 
-// ── Reviews (brief §6H) ─────────────────────────────────────────
-// NOTE FOR CLIENT: these are short placeholder testimonials for layout.
-// Replace with verified guest reviews and link each to its source
-// (Google / Zomato) before launch, per the brief.
+// ── Reviews / press quotes (brief §6H) ──────────────────────────
 export const REVIEWS = [
-  { quote: 'The closest thing to a Kerala home kitchen I’ve found in Delhi. The appam and stew took me straight back.', source: 'Guest review · Google' },
-  { quote: 'Their Onam Sadhya is the real thing — generous, beautifully served on a banana leaf, and endlessly comforting.', source: 'Guest review · Google' },
-  { quote: 'The Malabar biryani and fish pollichathu are worth the trip on their own. Warm service, honest flavours.', source: 'Guest review · Zomato' },
-  { quote: 'Finally, Kerala food that goes far beyond dosa and idli. Every dish tells you a little more about the coast.', source: 'Guest review · Google' },
+  { quote: 'God’s Own Cuisine.', source: 'Marryam H Reshii · Times of India' },
+  { quote: 'What I liked, apart from many of the dishes, was the enthusiasm of these two young men who have turned a passion into a business. This is a restaurant you should visit — for the food, the experience and the heated discussions that are bound to follow!', source: 'Rahul Verma · The Hindu' },
+  { quote: 'Masters of Malabar Masala.', source: 'The New Indian Express' },
+  { quote: 'Southern comfort for the northern palate.', source: 'Deccan Herald' },
+  { quote: 'The Moplah Mutton Biryani, from the northern Malabar region of Kerala, is bold on flavour and punch — and the best I have had in New Delhi.', source: 'Aparna Jain · Mint' },
+  { quote: 'The newly opened Mahabelly has been winning hearts for its excellent variety of dishes at reasonable prices.', source: 'What’s Hot · Times of India' },
+  { quote: 'If you like food from Kerala, you must try the Egg Appams at Mahabelly, situated behind DLF Place, Saket, Delhi.', source: 'NDTV Food' },
+  { quote: 'Drawing its inspiration from the Onam festival’s King Mahabali, Mahabelly features distinct delicacies showcasing Kerala’s rich culinary traditions.', source: 'Little Black Book Delhi' },
 ]
 
 export const REVIEW_PLATFORMS = [

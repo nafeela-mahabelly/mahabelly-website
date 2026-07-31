@@ -21,6 +21,11 @@ export interface MenuSection {
   note?: string
   groups: MenuGroup[]
 }
+export interface DishSpecial {
+  name: string
+  desc?: string
+  image: string
+}
 export interface Menu {
   slug: string
   outletName: string
@@ -30,6 +35,7 @@ export interface Menu {
   intro: string
   footnotes: string[]
   pdf?: string
+  specials?: DishSpecial[]
   sections: MenuSection[]
 }
 
@@ -47,6 +53,14 @@ const saket: Menu = {
     'Taxes and other charges (Takeaway @5% / Delivery @10%) extra as applicable.',
     'Additional charge of ₹99 / ₹80 for any boneless mutton / chicken dishes.',
     'All items are subject to availability. All good things take time — please allow us ample preparation time.',
+  ],
+  specials: [
+    { name: 'Meen Pollichathu', desc: 'Fish roasted in masala & steamed in a banana leaf', image: '/dishes/saket-pollichathu.jpg' },
+    { name: 'Prawn Mango Curry', desc: 'A Malabar signature — prawns in a tangy coconut gravy', image: '/dishes/saket-prawn-mango.jpg' },
+    { name: 'Fish Moilee', desc: 'Traditional Kerala-style fish stew', image: '/dishes/saket-fish-moilee.jpg' },
+    { name: 'Mutton Chettinad', desc: 'Slow-cooked mutton in a robust Chettinad masala', image: '/dishes/saket-mutton-chettinad.jpg' },
+    { name: 'Mutton Biriyani', desc: 'Malabar-style, layered with fragrant kaima rice', image: '/dishes/saket-mutton-biryani.jpg' },
+    { name: 'Trivandrum Chicken Fry', desc: 'Succulent pieces of red-hot fried chicken', image: '/dishes/saket-trivandrum-chicken.jpg' },
   ],
   sections: [
     {
@@ -311,6 +325,14 @@ const saidulajab: Menu = {
     '₹15 extra for Kuboos bread instead of Rumali Roti.',
   ],
   pdf: '/menus/mahabelly-canteen-saidulajab-menu.pdf',
+  specials: [
+    { name: 'Kizhi Porotta', desc: 'Porottas & spicy chicken finished in a banana leaf', image: '/dishes/said-kizhi.jpg' },
+    { name: 'Kothu-Porotta', desc: 'Shredded Malabar porotta tossed with buff & spices', image: '/dishes/said-kothu-buff.jpg' },
+    { name: 'Chicken 65', desc: 'Spicy, crisp boneless chicken', image: '/dishes/said-chicken65.jpg' },
+    { name: 'Porotta & Chicken Curry', desc: 'Everyday meal-box comfort', image: '/dishes/said-porotta-chicken.jpg' },
+    { name: 'Egg Biriyani', desc: 'Fragrant short-grain biriyani', image: '/dishes/said-egg-biryani.jpg' },
+    { name: 'Buff Roll', desc: 'Our version of the kathi roll', image: '/dishes/said-buff-roll.jpg' },
+  ],
   sections: [
     {
       name: 'Lunch Thali',
@@ -587,6 +609,14 @@ const vasantKunj: Menu = {
   intro:
     'Kerala tiffin, comforting meals, snacc appams and belly burgers — the Canteen at The Kunj, Vasant Kunj.',
   footnotes: ['Taxes extra as applicable. All items subject to availability.'],
+  specials: [
+    { name: 'Kanji & Payar', desc: 'Comforting rice porridge with green gram', image: '/dishes/vk-kanji.jpg' },
+    { name: 'Vegetable Kothu-Porotta', desc: 'Shredded porotta with vegetables & spice', image: '/dishes/vk-veg-kothu.jpg' },
+    { name: 'Gobi 65', desc: 'Southern-style crisp cauliflower', image: '/dishes/vk-gobi65.jpg' },
+    { name: 'Rice & Chicken Curry', desc: 'A hearty everyday meal box', image: '/dishes/vk-rice-chicken.jpg' },
+    { name: 'Mutton Roll', desc: 'Malabar porotta roll with spiced mutton', image: '/dishes/vk-mutton-roll.jpg' },
+    { name: 'Appam & Vegetable Kurma', desc: 'Soft laced appams with a mild coconut kurma', image: '/dishes/vk-appam-kurma.jpg' },
+  ],
   sections: [
     {
       name: 'Usual Suspects',

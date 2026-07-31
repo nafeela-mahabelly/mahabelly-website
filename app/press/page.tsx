@@ -4,6 +4,7 @@ import PageHero from '@/components/layout/PageHero'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Reveal from '@/components/ui/Reveal'
 import CTABand from '@/components/layout/CTABand'
+import Reviews from '@/components/Reviews'
 import { pageMeta } from '@/lib/seo'
 import { PRESS_AWARDS, PRESS_ARTICLES, PRESS_VIDEOS } from '@/lib/content'
 import { SITE } from '@/lib/site'
@@ -33,8 +34,8 @@ export default function PressPage() {
           {PRESS_AWARDS.map((a) => (
             <Reveal key={a.title}>
               <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 items-center bg-ink text-cream overflow-hidden rounded-3xl">
-                <div className="relative aspect-[16/6] md:aspect-auto md:h-full min-h-[200px]">
-                  <Image src={a.image} alt={a.title} fill className="object-cover" sizes="(max-width:768px) 100vw, 55vw" />
+                <div className="relative aspect-[27/10] min-h-[170px] p-4">
+                  <Image src={a.image} alt={a.title} fill className="object-contain" sizes="(max-width:768px) 100vw, 55vw" />
                 </div>
                 <div className="p-8">
                   <Award size={28} className="text-gold-light" />
@@ -45,6 +46,28 @@ export default function PressPage() {
               </div>
             </Reveal>
           ))}
+
+          {/* Team receiving the Times Food Awards */}
+          <Reveal className="mt-6 grid md:grid-cols-[1fr_1.1fr] gap-6 items-center">
+            <figure className="rounded-3xl overflow-hidden border border-ink/10 bg-cream-soft">
+              <Image
+                src="/festivals/times-food-award-team.jpg"
+                alt="The Mahabelly team receiving the Times Food & Nightlife Awards"
+                width={1280}
+                height={1280}
+                className="w-full h-auto object-cover"
+                sizes="(max-width:768px) 100vw, 45vw"
+              />
+            </figure>
+            <div>
+              <p className="font-serif italic text-2xl text-ink leading-snug">
+                “Best South Indian &amp; Coastal Cuisine Restaurant, Delhi.”
+              </p>
+              <p className="text-charcoal-soft mt-4 leading-relaxed">
+                The Mahabelly team, on stage to receive the Times Food &amp; Nightlife Awards across the years — a recognition we owe entirely to our guests.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -102,6 +125,9 @@ export default function PressPage() {
           </p>
         </div>
       </section>
+
+      {/* Testimonials / reviews (merged into In the News) */}
+      <Reviews tone="dark" />
 
       <CTABand />
     </>
