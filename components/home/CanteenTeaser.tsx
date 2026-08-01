@@ -15,10 +15,10 @@ export default function CanteenTeaser() {
           </h2>
           <div className="space-y-4 mt-6 text-charcoal-soft leading-relaxed max-w-xl">
             <p>
-              Almost every Malayali family has a Gulf story — and that connection has transformed the way Kerala eats.
+              Almost every Malayali family has a Gulf story, and that connection has transformed the way Kerala eats.
             </p>
             <p>
-              The Canteen is our younger, more casual format. Alongside comforting Kerala Meals and familiar favourites, it celebrates Kerala’s own versions of <strong className="text-ink">Al Faham, Shawaya and Shawarma</strong> — dishes that travelled from the Middle East and found a distinct second home in Kerala.
+              The Canteen is our younger, more casual format. Alongside comforting Kerala Meals and familiar favourites, it celebrates Kerala’s own versions of <strong className="text-ink">Al Faham, Shawaya and Shawarma</strong>, dishes that travelled from the Middle East and found a distinct second home in Kerala.
             </p>
           </div>
           <blockquote className="font-serif italic text-xl text-gold mt-6">
@@ -35,7 +35,7 @@ export default function CanteenTeaser() {
               <Image src="/brand/canteen-logo.png" alt="Mahabelly Canteen" width={320} height={320} className="w-52 md:w-60 h-auto object-contain" />
             </div>
             <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gold text-ink font-sans text-[10px] tracking-widest uppercase rounded-full px-4 py-1.5 whitespace-nowrap shadow-lg">
-              Al Faham · Shawaya · Mandhi
+              Al Faham · Shawaya · Mandhi · Kerala Meals
             </span>
           </div>
         </Reveal>

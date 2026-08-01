@@ -78,6 +78,24 @@ export default function SadhyaPage() {
         </div>
       </section>
 
+      {/* Onam Sadhya on a banana leaf */}
+      <section className="paper pt-0 pb-12 md:pb-16">
+        <div className="container-x">
+          <Reveal className="max-w-3xl mx-auto">
+            <div className="overflow-hidden rounded-2xl border border-ink/10 shadow-sm">
+              <Image
+                src="/photos/onam-real.jpg"
+                alt="A Mahabelly Onam Sadhya laid out on a banana leaf"
+                width={1410}
+                height={1612}
+                className="w-full h-auto object-cover"
+                sizes="(max-width:768px) 100vw, 768px"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Formats */}
       <section className="bg-sand py-16 md:py-24">
         <div className="container-x">

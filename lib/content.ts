@@ -34,6 +34,11 @@ export const EXPERIENCES = [
     blurb: 'A complete, comforting everyday spread of rice, curries and accompaniments.',
     image: '/photos/exp-kerala-meals.jpg',
   },
+  {
+    title: 'Arabic Dishes',
+    blurb: 'Kerala’s beloved Gulf favourites like Al Faham, Shawaya and Mandhi, grilled over open flame.',
+    image: '/photos/exp-arabic.jpg',
+  },
 ]
 
 // ── Our Story timeline (brief §6A) ──────────────────────────────
@@ -41,47 +46,47 @@ export const TIMELINE = [
   {
     year: '2006',
     title: 'A craving for home',
-    text: 'School friends Zachariah Jacob and Thomas Fenn move from Kerala to Delhi to study at St. Stephen’s College. Like most Malayalis living away from home, they begin missing the food they grew up with. During college, they often joke that if their careers don’t work out, they can always open a small “Mallu dhaba” outside campus. Neither drops out — but the idea stays with them.',
+    text: 'School friends Zachariah Jacob and Thomas Fenn move from Kerala to Delhi to study at St. Stephen’s College. Like most Malayalis living away from home, they soon begin missing the food they grew up eating. During college, they often joke that if their careers do not work out, they can always open a small “Mallu dhaba” outside the campus. Thankfully, neither of them drops out. The idea, however, stays with them.',
   },
   {
     year: '2014',
     title: 'The old idea returns',
-    text: 'By 2014, Zachariah is practising law in Delhi and Thomas is leading a children’s museum in Gurgaon. During one of their usual “catch-ups”, they start talking about the old college idea again. Delhi still doesn’t have enough places serving the Kerala food they miss. What began as a joke slowly starts sounding like something worth attempting — and they decide to take the plunge.',
+    text: 'By 2014, Zachariah was practising law in Delhi, while Thomas was leading a children’s museum in Gurgaon. During one of their usual catch ups, the old college idea comes up again. Delhi still does not have enough places serving the Kerala food they miss. What began as a joke slowly starts sounding like something worth attempting. Eventually, they decide to take the plunge.',
   },
   {
     year: '2015',
     title: 'Mahabelly is born',
-    text: 'After months of searching, they find a space behind DLF Place Mall in Saket — tucked away in a back alley. Their school friend Dr Prem Kiran joins them. None of the three has any formal restaurant experience; what they have is a deep love for Kerala food, plenty of determination, and the support of friends and family. Mahabelly opens with a simple belief: Kerala’s cuisine and culture deserve a much larger stage. Dr Shashi Tharoor launches the first outlet on 23 March 2015, and his tweet travels quickly — soon the little restaurant behind the mall is the talk of the town.',
+    text: 'After months of searching, they finally find a space behind DLF Place Mall in Saket, tucked away in a back alley. Their school friend Dr Prem Kiran joins them on the journey. None of the three has any formal restaurant experience. What they do have is a deep love for Kerala food, plenty of determination and the support of friends and family. Mahabelly opens with a simple belief: Kerala’s cuisine and culture deserve a much larger stage. Dr Shashi Tharoor launched the first outlet on 23 March 2015. His tweet about Mahabelly travels quickly, and before long, the little restaurant hidden behind the mall becomes the talk of the town.',
   },
   {
     year: '2016 – 2019',
     title: 'Word begins to travel',
-    text: 'Customers return with their friends and families. More Malayalis discover a familiar taste of home, while many others experience Kerala food for the first time. A Gurgaon kitchen follows, letting Mahabelly reach more homes and more tables. Slowly, the college dream begins to grow into a real brand.',
+    text: 'Customers return with their friends and families. More Malayalis discover a familiar taste of home, while many others experience Kerala food for the first time. A Gurgaon kitchen follows, helping Mahabelly reach more homes and more tables. Slowly, the college dream begins to grow into a real brand.',
   },
   {
     year: '2020',
     title: 'The year everything stopped',
-    text: 'When the pandemic arrives, the restaurant business comes to an almost complete standstill — one of Mahabelly’s most difficult periods. But customers and the wider community stand by the brand, especially through deliveries. With their support and the commitment of the team, Mahabelly makes it through. That support is something we will never forget.',
+    text: 'When the pandemic arrives, the restaurant business comes to an almost complete standstill. It became one of the most difficult periods in Mahabelly’s journey. Customers and the wider community stand by the brand, particularly through deliveries. With their support and the commitment of the team, Mahabelly makes it through. It is support that Mahabelly has never forgotten.',
   },
   {
     year: '2023',
     title: 'A new community',
-    text: 'Mahabelly opens at O.P. Jindal Global University in Sonipat — its first campus outlet and a completely new kind of audience. The team also introduces its Kerala–Gulf menu, with favourites such as Al Faham, Shawaya and Shawarma. The response is immediate, and the menu soon becomes a favourite within the Jindal community.',
+    text: 'Mahabelly opens at O.P. Jindal Global University in Sonipat. It is the brand’s first campus outlet and an opportunity to serve a completely new audience. The team also introduces a menu inspired by Kerala’s deep connection with the Gulf, featuring favourites such as Al Faham, Shawaya and Shawarma. The response is immediate, and the menu soon becomes a favourite within the Jindal community.',
   },
   {
     year: '2024',
     title: 'Our craziest year yet',
-    text: 'Mahabelly opens four new locations and also says goodbye to Mahabelly GK2. It is a year filled with excitement, difficult decisions, constant learning and very little sleep — in other words, a fairly typical year in the restaurant business, only much busier.',
+    text: 'Mahabelly opens four new locations and also says goodbye to Mahabelly GK2. It is a year filled with excitement, difficult decisions and constant learning. Sleep is in short supply. In other words, it is a fairly typical year in the restaurant business, only much busier.',
   },
   {
-    year: 'Oct 2024',
-    title: 'Mahabelly Canteen & the base kitchen',
-    text: 'Mahabelly Canteen launches as a younger, more casual expression of the brand, bringing together comforting Kerala meals and Kerala’s much-loved versions of Gulf favourites. Mahabelly also opens a base kitchen and central store in Lado Sarai, helping the team improve food production, consistency and standardisation as the business grows.',
+    year: 'October 2024',
+    title: 'Mahabelly Canteen and the base kitchen',
+    text: 'Mahabelly Canteen launches as a younger and more casual expression of the brand. Its menu brings together comforting Kerala meals and Kerala’s much loved versions of Gulf favourites. Mahabelly also opened a base kitchen and central store in Lado Sarai. This helps the team improve food production, consistency and standardisation as the business grows.',
   },
   {
-    year: 'Dec 2024',
+    year: 'December 2024',
     title: 'Back where it all began',
-    text: 'Mahabelly Saket moves from its original back-alley location into a new home inside DLF Avenue Mall. Nearly ten years after launching the first outlet, Dr Shashi Tharoor returns to inaugurate Mahabelly Saket once again — an emotional full-circle moment and a reminder of how far the journey has come.',
+    text: 'Mahabelly Saket moves from its original back alley location into a new home inside DLF Avenue Mall. Nearly ten years after launching the first outlet, Dr Shashi Tharoor returns to inaugurate Mahabelly Saket once again. It is an emotional full circle moment and a reminder of how far the journey has come.',
   },
   {
     year: '2025',
@@ -91,12 +96,7 @@ export const TIMELINE = [
   {
     year: 'Today',
     title: 'One story, many tables',
-    text: 'Today, Mahabelly is run by Zachariah Jacob and his family — Yacoob Jacob, Jacob Kelachadra and Sarah Mohan — with restaurants and kitchens across Saket, Saidulajab, Vasant Kunj, Lado Sarai, Gurgaon and Sonipat. But the number we are proudest of is not the number of outlets. It is the Mahabelly family of around 160 people who cook, serve, manage, deliver and carry this story forward every day.',
-  },
-  {
-    year: 'The road ahead',
-    title: 'More Malayali food for more people',
-    text: 'The dream is not simply to open more restaurants. It is to help more people discover the depth and diversity of Kerala cuisine, to celebrate Kerala’s food and culture with honesty, warmth and pride, and to grow without losing the feeling that made Mahabelly special in the first place. What began as a craving shared by two homesick college students has become a much larger mission: more Malayali food for more people.',
+    text: 'Today, Mahabelly is run by Zachariah Jacob and his family, including Yacoob Jacob, Jacob Kelachadra and Sarah Mohan. Together, they oversee a growing family of restaurants and kitchens across Saket, Saidulajab, Vasant Kunj, Lado Sarai, Gurgaon and Sonipat. But the number Mahabelly is proudest of is not the number of outlets. It is the family of around 160 people who cook, serve, manage, deliver and carry this story forward every day.',
   },
 ]
 
@@ -119,7 +119,7 @@ export const PEOPLE_GROUPS = [
   },
   {
     title: 'The Mahabelly family',
-    text: 'Around 150 people cook, serve, manage, deliver and carry the story forward every day — many of whom have grown with the brand, from steward to captain, from cook to kitchen leader.',
+    text: 'Around 160 people cook, serve, manage, deliver and carry the story forward every day, many of whom have grown with the brand, from steward to captain, from cook to kitchen leader.',
     image: '/photos/team-garland.jpg',
   },
 ]
@@ -204,10 +204,10 @@ export const PRESS_VIDEOS: PressItem[] = [
 // ── Reviews / press quotes (brief §6H) ──────────────────────────
 export const REVIEWS = [
   { quote: 'God’s Own Cuisine.', source: 'Marryam H Reshii · Times of India' },
-  { quote: 'What I liked, apart from many of the dishes, was the enthusiasm of these two young men who have turned a passion into a business. This is a restaurant you should visit — for the food, the experience and the heated discussions that are bound to follow!', source: 'Rahul Verma · The Hindu' },
+  { quote: 'What I liked, apart from many of the dishes, was the enthusiasm of these two young men who have turned a passion into a business. This is a restaurant you should visit, for the food, the experience and the heated discussions that are bound to follow!', source: 'Rahul Verma · The Hindu' },
   { quote: 'Masters of Malabar Masala.', source: 'The New Indian Express' },
   { quote: 'Southern comfort for the northern palate.', source: 'Deccan Herald' },
-  { quote: 'The Moplah Mutton Biryani, from the northern Malabar region of Kerala, is bold on flavour and punch — and the best I have had in New Delhi.', source: 'Aparna Jain · Mint' },
+  { quote: 'The Moplah Mutton Biryani, from the northern Malabar region of Kerala, is bold on flavour and punch, and the best I have had in New Delhi.', source: 'Aparna Jain · Mint' },
   { quote: 'The newly opened Mahabelly has been winning hearts for its excellent variety of dishes at reasonable prices.', source: 'What’s Hot · Times of India' },
   { quote: 'If you like food from Kerala, you must try the Egg Appams at Mahabelly, situated behind DLF Place, Saket, Delhi.', source: 'NDTV Food' },
   { quote: 'Drawing its inspiration from the Onam festival’s King Mahabali, Mahabelly features distinct delicacies showcasing Kerala’s rich culinary traditions.', source: 'Little Black Book Delhi' },

@@ -21,7 +21,7 @@ export default function ExploreKerala() {
           </h2>
           <div className="space-y-4 mt-6 text-cream/70 leading-relaxed max-w-2xl">
             <p>
-              Kerala food can be appam and stew on a quiet morning, puttu and kadala for breakfast, fish curry with red rice for lunch, beef roast and porotta at a toddy shop, Malabar biryani at a celebration — or a colourful Sadhya served on a banana leaf.
+              Kerala food can be appam and stew on a quiet morning, puttu and kadala for breakfast, fish curry with red rice for lunch, beef roast and porotta at a toddy shop, Malabar biryani at a celebration, or a colourful Sadhya served on a banana leaf.
             </p>
             <p>
               There are communities, coastlines, faiths, seasons and family traditions. Mahabelly brings these worlds together at one table.

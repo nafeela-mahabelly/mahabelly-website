@@ -10,19 +10,23 @@ import { SOCIALS } from '@/lib/site'
 interface Shot { src: string; w: number; h: number; alt: string }
 
 const SHOTS: Shot[] = [
-  { src: '/gallery/g1.jpg', w: 1500, h: 1685, alt: 'Malabar biryani with pappadam, raita and beetroot pachadi' },
+  { src: '/gallery/g18.jpg', w: 2200, h: 1760, alt: 'The Mahabelly Saket storefront at DLF Avenue Mall' },
   { src: '/gallery/g12.jpg', w: 1500, h: 1500, alt: 'Onam Sadhya served on a banana leaf' },
   { src: '/gallery/g4.jpg', w: 1500, h: 1000, alt: 'An Onam cultural evening with Kathakali artists' },
+  { src: '/gallery/g17.jpg', w: 2200, h: 1760, alt: 'Kathakali mural inside Mahabelly Saket' },
   { src: '/gallery/g2.jpg', w: 1500, h: 1108, alt: 'Kerala red matta rice' },
-  { src: '/gallery/g9.jpg', w: 1261, h: 1891, alt: '#MealsReady — Mahabelly Sadhya takeaway on a banana leaf' },
+  { src: '/gallery/g9.jpg', w: 1261, h: 1891, alt: '#MealsReady: Mahabelly Sadhya takeaway on a banana leaf' },
   { src: '/gallery/g8.jpg', w: 1500, h: 1000, alt: 'Prawn curry in a traditional brass pot' },
-  { src: '/gallery/g11.jpg', w: 1500, h: 1500, alt: 'Kappa — mashed tapioca, tempered with spices' },
+  { src: '/gallery/g16.jpg', w: 1536, h: 2048, alt: 'Inside a Mahabelly Canteen dining room' },
+  { src: '/gallery/g11.jpg', w: 1500, h: 1500, alt: 'Kappa, mashed tapioca tempered with spices' },
   { src: '/gallery/g10.jpg', w: 1500, h: 1000, alt: 'Inside Mahabelly Saket' },
   { src: '/gallery/g5.jpg', w: 1500, h: 1200, alt: 'Karimeen pollichathu, steamed in a banana-leaf parcel' },
+  { src: '/gallery/g19.jpg', w: 2200, h: 1650, alt: 'Dr Shashi Tharoor lighting the ceremonial lamp at Mahabelly' },
   { src: '/gallery/g3.jpg', w: 1410, h: 1800, alt: 'Kerala-style moru curry' },
-  { src: '/gallery/g14.jpg', w: 1500, h: 1015, alt: 'Appam & stew — a Kerala breakfast' },
+  { src: '/gallery/g14.jpg', w: 1500, h: 1015, alt: 'Appam & stew, a Kerala breakfast' },
+  { src: '/gallery/g20.jpg', w: 2200, h: 1650, alt: 'Dr Shashi Tharoor with the Mahabelly team' },
   { src: '/gallery/g13.jpg', w: 1500, h: 1500, alt: 'A traditional Kerala meal on a banana leaf' },
-  { src: '/gallery/g6.jpg', w: 1280, h: 960, alt: 'A Kerala spread at Mahabelly' },
+  { src: '/gallery/g15.jpg', w: 2200, h: 1467, alt: 'Mahabelly Canteen storefront in Saidulajab' },
   { src: '/gallery/g7.jpg', w: 509, h: 504, alt: 'Mahabelly celebrated by guests and dignitaries' },
 ]
 
@@ -51,7 +55,7 @@ export default function Gallery() {
   return (
     <section id="gallery" className="bg-cream-soft py-20 md:py-28 scroll-mt-24">
       <div className="container-x">
-        <SectionHeading kicker="Gallery" title="A taste in pictures" subtitle="From our kitchens, tables and festivals — tap any photo to view." />
+        <SectionHeading kicker="Gallery" title="A taste in pictures" subtitle="From our kitchens, tables and festivals. Tap any photo to view." />
 
         {/* Masonry */}
         <div className="columns-2 md:columns-3 lg:columns-4 gap-3 mt-14 [column-fill:_balance]">

@@ -37,16 +37,19 @@ export default function OurStoryPage() {
               Some ideas do not begin as business plans. They begin as cravings.
             </p>
             <p>
-              For Mahabelly, the journey began with the longing every Malayali away from home understands — for appam and stew, fish curry and red rice, the crackle of curry leaves in coconut oil, and food that can carry you home in a single bite.
+              For Mahabelly, the journey began with a feeling every Malayali living away from home knows well: missing appam and stew, fish curry and red rice, the crackle of curry leaves in coconut oil, and food that can take you home with a single bite.
             </p>
             <p>
-              Founded in Delhi in 2015 by childhood friends <strong>Zachariah Jacob</strong>, <strong>Thomas Fenn</strong> and <strong>Dr Prem Kiran</strong>, Mahabelly grew from a college-day dream into a larger purpose: to give Kerala’s cuisine and culture the stage they deserve. Beyond dosa, idli and sambar lies a world shaped by the coast, Syrian Christian homes, Malabar’s Mappila kitchens, temple traditions, toddy shops, festive Sadhyas and Kerala’s long relationship with the Gulf.
+              Founded in Delhi in 2015 by childhood friends <strong>Zachariah Jacob</strong>, <strong>Thomas Fenn</strong> and <strong>Dr Prem Kiran</strong>, Mahabelly grew from a college dream into a larger purpose: to give Kerala’s cuisine and culture the stage they deserve. Beyond dosa, idli and sambar lies a rich culinary world shaped by the coast, Syrian Christian homes, Malabar’s Mappila kitchens, temple traditions, toddy shops, festive Sadhyas and Kerala’s long relationship with the Gulf.
             </p>
             <p>
-              The first Mahabelly outlet was launched by Dr Shashi Tharoor in 2015. In 2024, he returned to relaunch Mahabelly again in Saket — a deeply meaningful full-circle moment that celebrated the brand’s resilience and opened a new chapter.
+              The first Mahabelly outlet was inaugurated by Dr Shashi Tharoor in 2015. Nearly a decade later, in 2024, he returned to relaunch Mahabelly in Saket. It was a meaningful full circle moment that reflected how far the brand had come and marked the beginning of a new chapter.
             </p>
             <p>
-              Today, Zachariah runs Mahabelly with his family and a team of around 160 people. Its mission reaches beyond restaurants: to celebrate Kerala through food, festivals, stories, experiences and community; to create meaningful opportunities for the people building Mahabelly; and to share the depth and warmth of Kerala’s culture with people from every background. For Malayalis, Mahabelly is a taste of home. For those discovering Kerala for the first time, it is a warm invitation in — one honest, generous meal at a time.
+              Today, Zachariah runs Mahabelly with his family and a team of around 160 people. The mission is bigger than running restaurants. It is about celebrating Kerala through food, festivals, stories, experiences and community. It is also about creating opportunities for the people building Mahabelly and sharing the warmth and depth of Kerala’s culture with people from every background.
+            </p>
+            <p>
+              For Malayalis, Mahabelly is a taste of home. For those discovering Kerala for the first time, it is an invitation to pull up a chair and explore, one honest and generous meal at a time.
             </p>
           </Reveal>
         </div>

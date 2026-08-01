@@ -139,11 +139,11 @@ export default function Footer() {
           <div>
             <h3 className="kicker text-gold-light mb-5">Stay in the Loop</h3>
             <p className="font-sans text-sm text-cream/50 mb-4 max-w-sm">
-              Sadhya announcements, new openings and Kerala stories — occasionally, never spammy.
+              Sadhya announcements, new openings and Kerala stories. Occasionally, never spammy.
             </p>
             {sent ? (
               <p className="flex items-center gap-2 font-sans text-sm text-gold-light">
-                <Check size={16} /> Thank you — we’ll be in touch.
+                <Check size={16} /> Thank you, we’ll be in touch.
               </p>
             ) : (
               <form

@@ -28,14 +28,14 @@ export default function StorySection() {
           </h2>
           <div className="space-y-4 mt-6 text-charcoal-soft leading-relaxed">
             <p>
-              For Mahabelly, the journey began with the longing every Malayali away from home understands — for appam and stew, fish curry and red rice, the crackle of curry leaves in coconut oil, and food that can carry you home in a single bite.
+              For Mahabelly, the journey began with the longing every Malayali away from home understands: for appam and stew, fish curry and red rice, the crackle of curry leaves in coconut oil, and food that can carry you home in a single bite.
             </p>
             <p>
               Founded in Delhi in 2015 by childhood friends Zachariah Jacob, Thomas Fenn and Dr Prem Kiran, Mahabelly grew from a college-day dream into a larger purpose: to give Kerala’s cuisine and culture the stage they deserve.
             </p>
           </div>
           <blockquote className="font-serif italic text-2xl text-ink mt-8 border-l-2 border-red pl-5">
-            For Malayalis, a taste of home. For everyone else, a warm invitation in — one honest, generous meal at a time.
+            For Malayalis, a taste of home. For everyone else, a warm invitation in, one honest, generous meal at a time.
           </blockquote>
           <Link href="/our-story" className="btn-ghost mt-8 group">
             Read our full story <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

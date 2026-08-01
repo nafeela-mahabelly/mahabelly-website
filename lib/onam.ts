@@ -26,7 +26,7 @@ export const ONAM_BOOKINGS: OnamBooking[] = [
   { label: 'Mahabelly Saket', format: 'Dine-In', where: 'DLF Avenue Mall, Saket', price: '₹1,699 / adult · all-inclusive', href: 'https://rzp.io/rzp/cVY03Vv' },
   { label: 'Mahabelly Canteen, Saidulajab', format: 'Dine-In', where: 'Westend Marg, Saidulajab', price: '₹1,199 / adult · all-inclusive', href: 'https://rzp.io/rzp/N2B0igcp' },
   { label: 'Mahabelly Canteen, The Kunj', format: 'Dine-In', where: 'The Kunj Mall, Vasant Kunj', price: '₹1,199 / adult · all-inclusive', href: 'https://rzp.io/rzp/tXZhJFPU' },
-  { label: 'Takeaway', format: 'Takeaway', where: 'Mahabelly Kitchen, Lado Sarai', price: '₹1,499 / Sadhya · serves one adult', href: 'https://rzp.io/rzp/vOE1oemY' },
+  { label: 'Takeaway', format: 'Takeaway', where: 'Mahabelly Kitchen, Lado Sarai', price: '₹1,499 / Sadhya · includes packaging', href: 'https://rzp.io/rzp/vOE1oemY' },
   { label: 'Home Delivery', format: 'Home Delivery', where: 'Within 15 km of Lado Sarai', price: '₹1,799 / Sadhya · incl. delivery & packing', href: 'https://rzp.io/rzp/YcDqfzA' },
 ]
 

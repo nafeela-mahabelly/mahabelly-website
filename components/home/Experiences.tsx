@@ -11,7 +11,7 @@ export default function Experiences() {
       <div className="container-x">
         <SectionHeading
           kicker="Signature Experiences"
-          title="Six ways into Kerala"
+          title="Seven ways into Kerala"
           subtitle="From the everyday meal to the grand feast."
         />
 

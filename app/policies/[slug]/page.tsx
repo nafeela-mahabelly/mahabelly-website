@@ -33,7 +33,7 @@ export default async function PolicyPage({ params }: { params: Promise<{ slug: s
         <div className="container-x max-w-3xl">
           <Reveal>
             <p className="font-sans text-xs text-charcoal-mute mb-8">
-              Effective date &amp; last updated: to be confirmed before launch.
+              Effective date &amp; last updated: 1 August 2026.
             </p>
             <p className="text-sm text-charcoal-soft leading-relaxed border-l-2 border-red pl-5 mb-8">{ENTITY_INTRO}</p>
             <p className="font-serif italic text-lg text-ink mb-10">{policy.intro}</p>

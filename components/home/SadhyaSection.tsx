@@ -9,7 +9,7 @@ export default function SadhyaSection() {
       <div className="grid lg:grid-cols-2">
         {/* Image */}
         <div className="relative min-h-[320px] lg:min-h-[560px]">
-          <Image src="/photos/sadhya-spread.jpg" alt="An Onam Sadhya served on a banana leaf" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
+          <Image src="/photos/onam-real.jpg" alt="An Onam Sadhya served on a banana leaf" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
           <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-red/70 via-red/10 to-transparent" />
         </div>
 
@@ -21,7 +21,7 @@ export default function SadhyaSection() {
             <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight">The Onam Sadhya</h2>
             <div className="space-y-4 mt-6 text-cream-soft/85 leading-relaxed">
               <p>
-                For Mahabelly, the Onam Sadhya is more than a festive meal. It is one of the most beautiful expressions of Kerala’s culture — generous, colourful, emotional and deeply rooted in community.
+                For Mahabelly, the Onam Sadhya is more than a festive meal. It is one of the most beautiful expressions of Kerala’s culture: generous, colourful, emotional and deeply rooted in community.
               </p>
               <p>
                 Over the years, Mahabelly has become one of Delhi NCR’s recognised homes for the Sadhya. For Malayalis, it is a reminder of home. For many others, it is their first introduction to the extraordinary depth of Kerala’s vegetarian cuisine.

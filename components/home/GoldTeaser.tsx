@@ -12,17 +12,17 @@ export default function GoldTeaser() {
               <Crown size={26} className="text-gold-light" />
             </div>
             <div>
-              <span className="kicker text-gold-light">Mahabelly Gold · Coming Soon</span>
+              <span className="kicker text-gold-light">Mahabelly Gold · Now Live</span>
               <h2 className="font-display text-2xl md:text-4xl font-bold mt-2 leading-tight">
                 A loyalty programme for the Mahabelly family.
               </h2>
               <p className="text-cream/65 mt-3 max-w-xl">
-                Rewards, festive treats and members-only perks — on their way. Stay tuned for updates.
+                Rewards, festive treats and members-only perks for the people who keep coming back for Kerala.
               </p>
             </div>
           </div>
           <Link href="/mahabelly-gold" className="btn bg-gold text-ink hover:bg-gold-light shrink-0 group">
-            Learn more <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+            Join our programme <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </Reveal>
       </div>

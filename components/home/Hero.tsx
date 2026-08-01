@@ -39,7 +39,7 @@ export default function Hero() {
             className="font-serif text-xl md:text-2xl text-cream/80 mt-6 max-w-xl leading-relaxed motion-safe:opacity-0 motion-safe:animate-fade-up"
             style={{ animationDelay: '0.4s' }}
           >
-            From appam and stew to Malabar biryani, toddy-shop favourites and the grand Onam Sadhya — Mahabelly brings the many flavours and stories of Kerala to Delhi NCR.
+            From appam and stew to Malabar biryani, toddy-shop favourites and the grand Onam Sadhya, Mahabelly brings the many flavours and stories of Kerala to Delhi NCR.
           </p>
 
           <div

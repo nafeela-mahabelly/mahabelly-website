@@ -7,7 +7,7 @@ import { SITE, waLink } from '@/lib/site'
 export const metadata = pageMeta({
   title: 'Mahabelly Gold | Loyalty Programme',
   description:
-    'Mahabelly Gold — our loyalty programme is coming soon. Rewards, perks and members-only treats for the Mahabelly family. Stay tuned.',
+    'Mahabelly Gold is our loyalty programme for the Mahabelly family. Rewards, perks and members-only treats. Join us today.',
   path: '/mahabelly-gold',
 })
 
@@ -23,7 +23,7 @@ export default function MahabellyGoldPage() {
       <PageHero
         kicker="Loyalty Programme"
         title="Mahabelly Gold"
-        subtitle="Rewards and perks for the Mahabelly family — coming soon."
+        subtitle="Rewards and perks for the Mahabelly family."
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Mahabelly Gold' }]}
       />
 
@@ -34,13 +34,13 @@ export default function MahabellyGoldPage() {
               <Crown size={34} className="text-gold-light" />
             </div>
             <span className="inline-block font-sans text-[11px] tracking-widest uppercase text-gold-light mt-6 border border-gold/40 rounded-full px-4 py-1">
-              Coming soon
+              Now live
             </span>
             <h2 className="font-display text-3xl md:text-5xl font-bold mt-6 leading-tight">
-              Something golden is on its way.
+              Something golden, just for you.
             </h2>
             <p className="text-cream/70 leading-relaxed mt-5 max-w-2xl mx-auto">
-              We’re building Mahabelly Gold — a loyalty programme to thank the guests who keep coming back for Kerala. Rewards, perks and members-only treats, all in one place. Stay tuned for updates.
+              Mahabelly Gold is our way of thanking the guests who keep coming back for Kerala. Rewards, perks and members-only treats, all in one place. Join the programme and start earning on your visits.
             </p>
           </Reveal>
 
@@ -57,9 +57,9 @@ export default function MahabellyGoldPage() {
           </div>
 
           <Reveal className="mt-14">
-            <p className="text-sm text-cream/60 mb-4">Want to be first to know when it launches?</p>
-            <a href={waLink('Hi Mahabelly, please notify me when Mahabelly Gold launches.')} target="_blank" rel="noopener noreferrer" className="btn bg-gold text-ink hover:bg-gold-light">
-              <MessageCircle size={15} /> Notify me on WhatsApp
+            <p className="text-sm text-cream/60 mb-4">Ready to join the Mahabelly family?</p>
+            <a href={waLink('Hi Mahabelly, I’d like to join Mahabelly Gold.')} target="_blank" rel="noopener noreferrer" className="btn bg-gold text-ink hover:bg-gold-light">
+              <MessageCircle size={15} /> Join on WhatsApp
             </a>
             <p className="text-xs text-cream/40 mt-4">
               Or write to <a href={`mailto:${SITE.email}`} className="text-gold-light hover:underline">{SITE.email}</a>
