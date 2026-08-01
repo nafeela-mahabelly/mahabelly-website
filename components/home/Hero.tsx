@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { CalendarCheck, ShoppingBag, ArrowRight } from 'lucide-react'
+import { CalendarCheck, ShoppingBag, ArrowRight, Sparkles } from 'lucide-react'
 import { LINKS, AWARD } from '@/lib/site'
 
 export default function Hero() {
@@ -20,16 +20,6 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/60 to-ink/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-ink/30" />
       </div>
-
-      {/* Botanical accent */}
-      <Image
-        src="/art/curry-leaves.png"
-        alt=""
-        width={520}
-        height={390}
-        aria-hidden
-        className="absolute -left-24 top-24 w-96 opacity-10 pointer-events-none select-none motion-safe:animate-fade-in"
-      />
 
       <div className="container-x relative z-10 pt-28 pb-20">
         <div className="max-w-3xl">
@@ -62,6 +52,9 @@ export default function Hero() {
             <a href={LINKS.orderOnline} className="btn-outline">
               <ShoppingBag size={16} /> Order Online
             </a>
+            <Link href={LINKS.onam} className="btn bg-gold text-ink hover:bg-gold-light">
+              <Sparkles size={16} /> Book Onam ’26
+            </Link>
             <Link href="/our-story" className="btn text-cream hover:text-gold-light !px-2 group">
               Explore Our Story <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
