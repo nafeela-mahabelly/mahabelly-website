@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Instagram, Facebook, Youtube, Mail, Phone, MapPin, Check } from 'lucide-react'
 import { SITE, LINKS, SOCIALS, AWARD } from '@/lib/site'
+import { useReserve } from '@/components/reserve/ReserveModal'
 
 const columns = [
   {
@@ -20,7 +21,7 @@ const columns = [
   {
     title: 'Plan',
     links: [
-      { label: 'Reserve a Table', href: LINKS.reserve, external: true },
+      { label: 'Reserve a Table', href: LINKS.reserve, external: true, reserve: true },
       { label: 'Order Online', href: LINKS.orderOnline },
       { label: 'Book Onam ’26', href: LINKS.onam, external: true },
       { label: 'Catering', href: '/catering' },
@@ -53,6 +54,7 @@ const socialIcons = { Instagram, Facebook, YouTube: Youtube } as const
 export default function Footer() {
   const [sent, setSent] = useState(false)
   const year = new Date().getFullYear()
+  const { open: openReserve } = useReserve()
 
   return (
     <footer className="bg-ink text-cream/70 relative">
@@ -95,7 +97,15 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    {'external' in l && l.external ? (
+                    {'reserve' in l && l.reserve ? (
+                      <button
+                        type="button"
+                        onClick={openReserve}
+                        className="font-sans text-sm text-cream/55 hover:text-cream transition-colors text-left"
+                      >
+                        {l.label}
+                      </button>
+                    ) : 'external' in l && l.external ? (
                       <a
                         href={l.href}
                         target="_blank"

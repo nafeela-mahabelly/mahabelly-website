@@ -31,6 +31,23 @@ export const LINKS = {
   pressKit: '#',
 } as const
 
+// Reservation links per outlet — shown in the Reserve popup (replaces the single linktr.ee link)
+export interface ReserveOutlet {
+  name: string
+  area: string
+  href: string
+}
+
+export const RESERVE_OUTLETS: ReserveOutlet[] = [
+  { name: 'Mahabelly Saket', area: 'DLF Avenue Mall, Saket', href: 'https://tinyurl.com/yc2nntu5' },
+  { name: 'Mahabelly Canteen', area: 'Saidulajab, New Delhi', href: 'https://tinyurl.com/9879apzm' },
+  {
+    name: 'Mahabelly Vasant Kunj',
+    area: 'The Kunj, Vasant Kunj',
+    href: 'https://www.google.com/maps/reserve/v/dine/c/rjzy0wEZO4U?source=pa&opi=89978449&hl=en-AE&gei=CsxtaueVAfOckdUPgNyCOA&sourceurl=https://www.google.com/search?q%3Dmahabelly%2Bvasant%2Bkunj%26oq%3Dmahabelly%2Bvasa%26pf%3Dcs%26sourceid%3Dchrome%26source%3Dchrome.ob%26ie%3DUTF-8',
+  },
+]
+
 // Delivery-app links per outlet, shown on the /order page
 export interface OrderOutlet {
   name: string

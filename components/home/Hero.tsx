@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { CalendarCheck, ShoppingBag, ArrowRight, Sparkles } from 'lucide-react'
 import { LINKS, AWARD } from '@/lib/site'
+import ReserveButton from '@/components/reserve/ReserveButton'
 
 export default function Hero() {
   return (
@@ -46,9 +47,9 @@ export default function Hero() {
             className="flex flex-wrap items-center gap-3 mt-9 motion-safe:opacity-0 motion-safe:animate-fade-up"
             style={{ animationDelay: '0.55s' }}
           >
-            <a href={LINKS.reserve} target="_blank" rel="noopener noreferrer" className="btn-red">
+            <ReserveButton className="btn-red">
               <CalendarCheck size={16} /> Reserve a Table
-            </a>
+            </ReserveButton>
             <a href={LINKS.orderOnline} className="btn-outline">
               <ShoppingBag size={16} /> Order Online
             </a>

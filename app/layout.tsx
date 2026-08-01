@@ -5,6 +5,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import FloatingButtons from '@/components/layout/FloatingButtons'
 import MobileActionBar from '@/components/layout/MobileActionBar'
+import { ReserveProvider } from '@/components/reserve/ReserveModal'
 import JsonLd from '@/components/ui/JsonLd'
 import { organizationLd, websiteLd } from '@/lib/seo'
 import { SITE } from '@/lib/site'
@@ -68,13 +69,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <JsonLd data={organizationLd} />
         <JsonLd data={websiteLd} />
-        <Navbar />
-        <main id="main" className="overflow-x-hidden pb-[52px] xl:pb-0">
-          {children}
-        </main>
-        <Footer />
-        <FloatingButtons />
-        <MobileActionBar />
+        <ReserveProvider>
+          <Navbar />
+          <main id="main" className="overflow-x-hidden pb-[52px] xl:pb-0">
+            {children}
+          </main>
+          <Footer />
+          <FloatingButtons />
+          <MobileActionBar />
+        </ReserveProvider>
       </body>
     </html>
   )

@@ -7,12 +7,14 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { Menu, X, CalendarCheck, ShoppingBag, Sparkles } from 'lucide-react'
 import { ALL_NAV, LINKS } from '@/lib/site'
+import { useReserve } from '@/components/reserve/ReserveModal'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
   const reduce = useReducedMotion()
+  const { open: openReserve } = useReserve()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -77,14 +79,13 @@ export default function Navbar() {
 
           {/* Desktop CTAs */}
           <div className="hidden xl:flex items-center gap-2.5">
-            <a
-              href={LINKS.reserve}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={openReserve}
               className={`btn ${solid ? 'btn-outline-ink' : 'btn-outline'} !px-4 !py-2.5`}
             >
               <CalendarCheck size={14} /> Reserve
-            </a>
+            </button>
             <Link href={LINKS.orderOnline} className="btn-red !px-4 !py-2.5">
               <ShoppingBag size={14} /> Order
             </Link>
@@ -139,9 +140,9 @@ export default function Navbar() {
                 <Sparkles size={15} /> Book Onam ’26
               </Link>
               <div className="grid grid-cols-2 gap-3">
-                <a href={LINKS.reserve} target="_blank" rel="noopener noreferrer" className="btn-outline w-full">
+                <button type="button" onClick={() => { setOpen(false); openReserve() }} className="btn-outline w-full">
                   <CalendarCheck size={15} /> Reserve
-                </a>
+                </button>
                 <Link href={LINKS.orderOnline} className="btn-red w-full">
                   <ShoppingBag size={15} /> Order
                 </Link>

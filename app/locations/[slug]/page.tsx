@@ -4,6 +4,7 @@ import { MapPin, Clock, Phone, MessageCircle, Navigation as NavIcon, BookOpen, C
 import PageHero from '@/components/layout/PageHero'
 import Reveal from '@/components/ui/Reveal'
 import CTABand from '@/components/layout/CTABand'
+import ReserveButton from '@/components/reserve/ReserveButton'
 import JsonLd from '@/components/ui/JsonLd'
 import { pageMeta, restaurantLd } from '@/lib/seo'
 import { OUTLETS, SITE, LINKS, mapsUrl, mapsEmbed, waLink } from '@/lib/site'
@@ -90,9 +91,9 @@ export default async function OutletPage({ params }: { params: Promise<{ slug: s
                 <MessageCircle size={15} /> WhatsApp
               </a>
               {o.reservation && (
-                <a href={LINKS.reserve} target="_blank" rel="noopener noreferrer" className="btn-red w-full">
+                <ReserveButton className="btn-red w-full">
                   <CalendarCheck size={15} /> Reserve a Table
-                </a>
+                </ReserveButton>
               )}
               {o.delivery && (
                 <a href={LINKS.orderOnline} className="btn-red w-full">

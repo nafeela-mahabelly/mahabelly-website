@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { CalendarCheck, ShoppingBag, ChevronRight } from 'lucide-react'
 import { LINKS } from '@/lib/site'
 import Reveal from '@/components/ui/Reveal'
+import ReserveButton from '@/components/reserve/ReserveButton'
 
 interface Props {
   title?: string
@@ -31,9 +32,9 @@ export default function CTABand({
           <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">{title}</h2>
           <p className="font-serif italic text-xl text-cream-soft/85 mt-3">{subtitle}</p>
           <div className="flex flex-wrap gap-3 mt-8">
-            <a href={LINKS.reserve} target="_blank" rel="noopener noreferrer" className="btn bg-cream-soft text-red hover:bg-cream">
+            <ReserveButton className="btn bg-cream-soft text-red hover:bg-cream">
               <CalendarCheck size={15} /> Reserve a Table
-            </a>
+            </ReserveButton>
             <a href={LINKS.orderOnline} className="btn border border-cream-soft/70 text-cream-soft hover:bg-cream-soft hover:text-red">
               <ShoppingBag size={15} /> Order Online
             </a>
