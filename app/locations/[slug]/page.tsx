@@ -2,11 +2,14 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { MapPin, Clock, Phone, MessageCircle, Navigation as NavIcon, BookOpen, CalendarCheck, ShoppingBag } from 'lucide-react'
 import PageHero from '@/components/layout/PageHero'
+import SectionHeading from '@/components/ui/SectionHeading'
 import Reveal from '@/components/ui/Reveal'
 import CTABand from '@/components/layout/CTABand'
 import ReserveButton from '@/components/reserve/ReserveButton'
+import MenuFlipbook from '@/components/menu/MenuFlipbook'
 import JsonLd from '@/components/ui/JsonLd'
 import { pageMeta, restaurantLd } from '@/lib/seo'
+import { getMenuBook } from '@/lib/menuBooks'
 import { OUTLETS, SITE, LINKS, mapsUrl, mapsEmbed, waLink } from '@/lib/site'
 
 export function generateStaticParams() {
@@ -28,6 +31,9 @@ export default async function OutletPage({ params }: { params: Promise<{ slug: s
   const { slug } = await params
   const o = OUTLETS.find((x) => x.slug === slug)
   if (!o) notFound()
+
+  // Outlets without a dedicated /menu page show their menu flipbook here.
+  const book = !o.menuSlug ? getMenuBook(o.slug) : undefined
 
   const services = [
     o.dineIn && 'Dine-in',
@@ -122,6 +128,19 @@ export default async function OutletPage({ params }: { params: Promise<{ slug: s
           </Reveal>
         </div>
       </section>
+
+      {book && (
+        <section className="bg-sand py-16 md:py-24">
+          <div className="container-x">
+            <SectionHeading
+              kicker="The Menu"
+              title="Flip through the menu"
+              subtitle="Swipe, use the arrows, or tap any page to view it full-screen."
+            />
+            <MenuFlipbook pages={book} label={`${o.name} menu`} />
+          </div>
+        </section>
+      )}
 
       <CTABand showExplore={false} />
     </>

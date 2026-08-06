@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { MapPin, Clock, ArrowRight } from 'lucide-react'
 import { Outlet, mapsUrl } from '@/lib/site'
+import { getAmbience } from '@/lib/ambience'
+import AmbienceCarousel from '@/components/ui/AmbienceCarousel'
 
 const brandBadge = {
   mahabelly: 'bg-red/10 text-red border-red/30',
@@ -8,8 +10,17 @@ const brandBadge = {
 }
 
 /** Location card used on home + locations pages. */
-export default function OutletCard({ outlet, tone = 'light' }: { outlet: Outlet; tone?: 'light' | 'dark' }) {
+export default function OutletCard({
+  outlet,
+  tone = 'light',
+  showAmbience = false,
+}: {
+  outlet: Outlet
+  tone?: 'light' | 'dark'
+  showAmbience?: boolean
+}) {
   const dark = tone === 'dark'
+  const ambience = showAmbience ? getAmbience(outlet.slug) : undefined
   const services = [
     outlet.dineIn && 'Dine-in',
     outlet.takeaway && 'Takeaway',
@@ -24,6 +35,8 @@ export default function OutletCard({ outlet, tone = 'light' }: { outlet: Outlet;
           : 'bg-cream-soft border-ink/10 hover:border-red/30 hover:shadow-lg'
       }`}
     >
+      {ambience && <AmbienceCarousel images={ambience} name={outlet.name} />}
+
       <div className="flex items-center justify-between mb-4">
         <span className={`font-sans text-[10px] tracking-widest uppercase border rounded-full px-3 py-1 ${brandBadge[outlet.brand]}`}>
           {outlet.brand === 'canteen' ? 'Canteen' : 'Mahabelly'}

@@ -97,7 +97,7 @@ export default function OurBrandsPage() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {outlets.map((o, i) => (
                       <Reveal key={o.slug} delay={(i % 3) * 0.06}>
-                        <OutletCard outlet={o} />
+                        <OutletCard outlet={o} showAmbience />
                       </Reveal>
                     ))}
                   </div>
