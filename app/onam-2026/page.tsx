@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ExternalLink, Utensils, ShoppingBag, Bike, ArrowRight, Info } from 'lucide-react'
-import PageHero from '@/components/layout/PageHero'
+import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import Reveal from '@/components/ui/Reveal'
 import { pageMeta } from '@/lib/seo'
 import { ONAM, ONAM_BOOKINGS, OnamBooking } from '@/lib/onam'
@@ -44,23 +44,31 @@ function BookingCard({ b }: { b: OnamBooking }) {
 export default function Onam2026Page() {
   return (
     <>
-      <PageHero
-        kicker={`Onam Sadhya · ${ONAM.year}`}
-        title="Book your Onam Sadhya"
-        subtitle={ONAM.dates}
-        crumbs={[{ label: 'Home', href: '/' }, { label: 'Events', href: '/events' }, { label: 'Book Onam ’26' }]}
-      />
-
-      {/* Banner */}
-      <section className="bg-ink">
-        <div className="container-x py-8">
+      {/* Hero with a half-translucent festive backdrop */}
+      <header className="relative bg-ink pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+        <Image
+          src="/festivals/onam-cover.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-[0.65]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/45" />
+        <div className="container-x relative">
           <Reveal>
-            <div className="relative w-full overflow-hidden rounded-2xl" style={{ aspectRatio: '2200 / 814' }}>
-              <Image src={ONAM.banner} alt="Mahabelly Onam Sadhya 2026" fill className="object-cover" sizes="100vw" priority />
-            </div>
+            <Breadcrumbs
+              items={[{ label: 'Home', href: '/' }, { label: 'Events', href: '/events' }, { label: 'Book Onam ’26' }]}
+              tone="dark"
+            />
+            <span className="kicker text-gold-light block mt-6">Onam Sadhya · {ONAM.year}</span>
+            <h1 className="font-display text-4xl md:text-6xl font-bold text-cream leading-[1.05] mt-3 max-w-4xl">
+              Book your Onam Sadhya
+            </h1>
+            <p className="font-serif italic text-xl md:text-2xl text-cream/75 mt-5 max-w-2xl">{ONAM.dates}</p>
           </Reveal>
         </div>
-      </section>
+      </header>
 
       {/* Booking options */}
       <section className="paper py-14 md:py-20">

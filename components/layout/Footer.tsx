@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Instagram, Facebook, Youtube, Mail, Phone, MapPin, Check } from 'lucide-react'
+import { Instagram, Facebook, Youtube, Mail, Phone, MapPin, Check, Star } from 'lucide-react'
 import { SITE, LINKS, SOCIALS, AWARD } from '@/lib/site'
 import { useReserve } from '@/components/reserve/ReserveModal'
 
@@ -144,6 +144,14 @@ export default function Footer() {
                 <span className="font-sans text-sm text-cream/60">{SITE.region}, India</span>
               </li>
             </ul>
+            <a
+              href="https://lnk.bio/mahabelly"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn bg-gold text-ink hover:bg-gold-light !py-2.5 mt-6"
+            >
+              <Star size={15} /> Leave us a review
+            </a>
           </div>
 
           <div>
