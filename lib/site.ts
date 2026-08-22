@@ -94,8 +94,13 @@ export const SOCIALS = [
   { label: 'YouTube', href: 'https://www.youtube.com/results?search_query=mahabelly', handle: 'Mahabelly' },
 ] as const
 
-export function waLink(message: string) {
-  return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`
+// WhatsApp chat now routes to the Heyo chatbot instead of a personal number.
+// The chatbot link takes no prefilled text, so the message arg is intentionally
+// ignored — the signature is kept so existing callers don't need to change.
+export const WHATSAPP_URL = 'https://t.heyo.bot/xj3gpup'
+
+export function waLink(_message?: string) {
+  return WHATSAPP_URL
 }
 
 // ── Navigation (brief §3 Information Architecture) ───────────────
