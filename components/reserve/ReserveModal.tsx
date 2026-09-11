@@ -8,7 +8,7 @@ import { RESERVE_OUTLETS, LINKS, SITE } from '@/lib/site'
 // ── Onam pause ──────────────────────────────────────────────────
 // Table reservations are paused for the Onam rush. Flip this back to
 // `false` (and redeploy) to restore the outlet reservation options.
-const RESERVATIONS_PAUSED = true
+const RESERVATIONS_PAUSED = false
 
 interface ReserveCtx {
   open: () => void
