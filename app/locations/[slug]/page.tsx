@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!o) return {}
   return pageMeta({
     title: `${o.name} | ${o.city}`,
-    description: `${o.name} — ${o.format} in ${o.area}, ${o.city}. Address, hours, directions, menu, reservations and online ordering.`,
+    description: `${o.name}: ${o.format} in ${o.area}, ${o.city}. Address, hours, directions, menu, reservations and online ordering.`,
     path: `/locations/${o.slug}`,
   })
 }
@@ -76,7 +76,7 @@ export default async function OutletPage({ params }: { params: Promise<{ slug: s
                 <div>
                   <p className="font-sans text-sm font-semibold text-ink">Hours</p>
                   <p className="text-sm text-charcoal-soft mt-0.5">{o.hours}</p>
-                  <p className="text-xs text-charcoal-mute mt-0.5">Hours may vary on festivals — please call to confirm.</p>
+                  <p className="text-xs text-charcoal-mute mt-0.5">Hours may vary on festivals, so please call to confirm.</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -108,7 +108,7 @@ export default async function OutletPage({ params }: { params: Promise<{ slug: s
               )}
               {o.menuSlug && (
                 <Link href={`/menu/${o.menuSlug}`} className="btn-ink w-full sm:col-span-2">
-                  <BookOpen size={15} /> View this outlet’s menu
+                  <BookOpen size={15} className="shrink-0" /> View this outlet’s menu
                 </Link>
               )}
             </div>

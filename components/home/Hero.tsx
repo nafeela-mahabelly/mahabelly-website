@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { CalendarCheck, ShoppingBag, ArrowRight, Sparkles } from 'lucide-react'
+import { CalendarCheck, ShoppingBag, ArrowRight } from 'lucide-react'
 import { LINKS, AWARD } from '@/lib/site'
 import ReserveButton from '@/components/reserve/ReserveButton'
 
@@ -40,7 +40,7 @@ export default function Hero() {
             className="font-serif text-xl md:text-2xl text-cream/80 mt-6 max-w-xl leading-relaxed motion-safe:opacity-0 motion-safe:animate-fade-up"
             style={{ animationDelay: '0.4s' }}
           >
-            From appam and stew to Malabar biryani, toddy-shop favourites and the grand Onam Sadhya, Mahabelly brings the many flavours and stories of Kerala to Delhi NCR.
+            From appam and stew to Malabar biriyani, toddy-shop favourites and the grand Onam Sadhya, Mahabelly brings the many flavours and stories of Kerala to Delhi NCR.
           </p>
 
           <div
@@ -53,9 +53,6 @@ export default function Hero() {
             <a href={LINKS.orderOnline} className="btn-outline">
               <ShoppingBag size={16} /> Order Online
             </a>
-            <Link href={LINKS.onam} className="btn bg-gold text-ink hover:bg-gold-light">
-              <Sparkles size={16} /> Book Onam ’26
-            </Link>
             <Link href="/our-story" className="btn text-cream hover:text-gold-light !px-2 group">
               Explore Our Story <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>

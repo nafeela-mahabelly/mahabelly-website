@@ -32,7 +32,7 @@ export default function MenuView({ menu }: { menu: Menu }) {
             <a href={LINKS.orderOnline} className="btn-red w-full">Order Online</a>
             {menu.pdf && (
               <a href={menu.pdf} target="_blank" rel="noopener noreferrer" className="btn-outline-ink w-full">
-                <Download size={14} /> Download PDF
+                <Download size={15} className="shrink-0" /> Download PDF
               </a>
             )}
           </div>

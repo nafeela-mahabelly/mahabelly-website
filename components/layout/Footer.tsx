@@ -23,7 +23,6 @@ const columns = [
     links: [
       { label: 'Reserve a Table', href: LINKS.reserve, external: true, reserve: true },
       { label: 'Order Online', href: LINKS.orderOnline },
-      { label: 'Book Onam ’26', href: LINKS.onam, external: true },
       { label: 'Catering', href: '/catering' },
       { label: 'Contact Us', href: '/contact' },
     ],
@@ -31,8 +30,8 @@ const columns = [
   {
     title: 'Discover',
     links: [
-      { label: 'In the News', href: '/press' },
       { label: 'Mahabelly Gold', href: '/mahabelly-gold' },
+      { label: 'In the News', href: '/press' },
       { label: 'Instagram', href: SOCIALS[0].href, external: true },
       { label: 'Careers', href: '/contact' },
     ],

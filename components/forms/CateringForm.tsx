@@ -15,7 +15,7 @@ export default function CateringForm() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const f = new FormData(e.currentTarget)
-    const g = (k: string) => (f.get(k) as string) || '—'
+    const g = (k: string) => (f.get(k) as string) || 'Not specified'
     const msg =
       `New catering enquiry from the website:%0A%0A` +
       `Name: ${g('name')}%0A` +
@@ -42,7 +42,7 @@ export default function CateringForm() {
         <h3 className="font-display text-2xl font-bold text-ink">Thank you.</h3>
         <p className="text-charcoal-soft mt-2">Our catering team will contact you within one business day.</p>
         <p className="text-xs text-charcoal-mute mt-4">
-          A WhatsApp message opened with your details — send it to reach us instantly, or call{' '}
+          A WhatsApp message opened with your details. Send it to reach us instantly, or call{' '}
           <a href={`tel:${SITE.phoneRaw}`} className="text-red hover:underline">{SITE.phone}</a>.
         </p>
         <button onClick={() => setSent(false)} className="btn-outline-ink mt-6">Send another enquiry</button>

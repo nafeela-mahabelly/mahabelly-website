@@ -24,8 +24,6 @@ export const LINKS = {
   // Direct online ordering (Mahabelly)
   orderDirect: 'https://mahabelly.co/onlineorder/order',
   reserve: 'https://linktr.ee/mahabelly',
-  // Onam '26 booking hub (internal page listing the Razorpay options)
-  onam: '/onam-2026',
   // Placeholder form / enquiry destinations — to be replaced by the client
   cateringEnquiry: '#',
   pressKit: '#',
@@ -107,6 +105,9 @@ export function waLink(_message?: string) {
 export const PRIMARY_NAV = [
   { label: 'Our Story', href: '/our-story' },
   { label: 'Our Brands', href: '/our-brands' },
+  { label: 'Mahabelly Gold', href: '/mahabelly-gold' },
+  { label: 'Menus', href: '/menu' },
+  { label: 'Locations', href: '/locations' },
   { label: 'Events', href: '/events' },
   { label: 'Catering', href: '/catering' },
   { label: 'Gallery', href: '/#gallery' },
@@ -114,7 +115,6 @@ export const PRIMARY_NAV = [
 ]
 
 export const MORE_NAV = [
-  { label: 'Mahabelly Gold', href: '/mahabelly-gold' },
   { label: 'Contact', href: '/contact' },
 ]
 

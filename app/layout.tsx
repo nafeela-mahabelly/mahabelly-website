@@ -1,15 +1,22 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { Playfair_Display, Cormorant_Garamond, Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import FloatingButtons from '@/components/layout/FloatingButtons'
 import MobileActionBar from '@/components/layout/MobileActionBar'
 import { ReserveProvider } from '@/components/reserve/ReserveModal'
 import JsonLd from '@/components/ui/JsonLd'
 import { organizationLd, websiteLd } from '@/lib/seo'
 import { SITE } from '@/lib/site'
+
+// viewport-fit=cover lets the sticky mobile bar pad itself clear of the iOS
+// home indicator via env(safe-area-inset-*); .container-x pads for notches.
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+}
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -37,7 +44,7 @@ export const metadata: Metadata = {
     template: '%s | Mahabelly',
   },
   description:
-    'Discover Mahabelly’s Kerala cuisine — from appam and stew to Malabar biryani, seafood, Kerala Meals and festive Sadhyas across Delhi NCR.',
+    'Discover Mahabelly’s Kerala cuisine, from appam and stew to Malabar biriyani, seafood, Kerala Meals and festive Sadhyas across Delhi NCR.',
   applicationName: 'Mahabelly',
   authors: [{ name: 'Mahabelly' }],
   creator: 'Mahabelly',
@@ -54,7 +61,7 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     siteName: 'Mahabelly',
     url: SITE.url,
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Mahabelly — Kerala, Served With Soul' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Mahabelly: Kerala, Served With Soul' }],
   },
 }
 
@@ -93,11 +100,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <JsonLd data={websiteLd} />
         <ReserveProvider>
           <Navbar />
-          <main id="main" className="overflow-x-hidden pb-[52px] xl:pb-0">
+          <main id="main" className="overflow-x-hidden">
             {children}
           </main>
           <Footer />
-          <FloatingButtons />
+          {/* Spacer so the sticky mobile bar never hides the end of the footer */}
+          <div aria-hidden="true" className="xl:hidden h-[calc(49px+env(safe-area-inset-bottom))] bg-ink" />
           <MobileActionBar />
         </ReserveProvider>
       </body>

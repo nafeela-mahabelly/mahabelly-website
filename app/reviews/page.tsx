@@ -19,7 +19,7 @@ export default function ReviewsPage() {
       <PageHero
         kicker="Reviews"
         title="What our guests say"
-        subtitle="Taste, warmth, nostalgia and discovery — in our guests’ own words."
+        subtitle="Taste, warmth, nostalgia and discovery, in our guests’ own words."
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Reviews' }]}
         image="/photos/sadhya-serving.jpg"
       />
@@ -34,7 +34,7 @@ export default function ReviewsPage() {
               {[...Array(5)].map((_, i) => <Star key={i} size={22} className="text-gold-light fill-gold-light" />)}
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-bold">Enjoyed your meal?</h2>
-            <p className="text-cream/65 mt-3">Leave a review for your outlet — it means the world to our team.</p>
+            <p className="text-cream/65 mt-3">Leave a review for your outlet. It means the world to our team.</p>
             <div className="flex flex-wrap justify-center gap-3 mt-8">
               {REVIEW_PLATFORMS.map((p) => (
                 <a key={p.label} href={p.href} target="_blank" rel="noopener noreferrer" className="btn-outline">{p.label}</a>

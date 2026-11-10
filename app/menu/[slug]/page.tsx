@@ -56,7 +56,7 @@ export default async function MenuPage({ params }: { params: Promise<{ slug: str
       <JsonLd data={menuLd} />
       <PageHero
         kicker={menu.kicker}
-        title={`${menu.outletName} — Menu`}
+        title={`${menu.outletName} Menu`}
         subtitle={menu.intro}
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Menu', href: '/menu' }, { label: menu.outletName }]}
       />

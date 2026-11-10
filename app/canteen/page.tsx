@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Check } from 'lucide-react'
+import { BookOpen, Check } from 'lucide-react'
 import PageHero from '@/components/layout/PageHero'
 import SectionHeading from '@/components/ui/SectionHeading'
 import OutletCard from '@/components/ui/OutletCard'
@@ -8,19 +8,21 @@ import Reveal from '@/components/ui/Reveal'
 import CTABand from '@/components/layout/CTABand'
 import { pageMeta } from '@/lib/seo'
 import { OUTLETS } from '@/lib/site'
+import { CANTEEN } from '@/lib/canteen'
 
 export const metadata = pageMeta({
-  title: 'Mahabelly Canteen | Kerala Meals, Al Faham & Shawarma',
+  title: 'Mahabelly Canteen | Everyday Kerala Food in Delhi',
   description:
-    'Discover Mahabelly Canteen’s casual Kerala menu — from comforting Meals to Kerala-style Al Faham, Shawaya, Shawarma and Mandhi.',
+    'Discover everyday Kerala food at Mahabelly Canteen in Saidulajab and Vasant Kunj. Explore the menus, find an outlet and order online.',
   path: '/canteen',
 })
 
-const distinctions = [
-  'Everyday meals, not a fine-dining occasion',
-  'Affordable, informal and quick',
-  'Kerala tiffin, thalis and combos',
-  'Kerala–Gulf grills: Al Faham, Shawaya, Mandhi',
+// Everyday-Kerala Canteen dishes (real Canteen photography from the outlet menus)
+const everyday = [
+  { name: 'Porotta & Chicken Curry', image: '/dishes/said-porotta-chicken.jpg' },
+  { name: 'Appam & Vegetable Kurma', image: '/dishes/vk-appam-kurma.jpg' },
+  { name: 'Kizhi Porotta', image: '/dishes/said-kizhi.jpg' },
+  { name: 'Kanji & Payar', image: '/dishes/vk-kanji.jpg' },
 ]
 
 export default function CanteenPage() {
@@ -29,11 +31,11 @@ export default function CanteenPage() {
   return (
     <>
       <PageHero
-        kicker="Kerala Meets the Gulf"
+        kicker={CANTEEN.eyebrow}
         title="Mahabelly Canteen"
-        subtitle="Everyday Kerala. Served without ceremony, but never without soul."
+        subtitle={CANTEEN.line}
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Mahabelly Canteen' }]}
-        image="/photos/sadhya-serving.jpg"
+        image="/dishes/said-porotta-chicken.jpg"
       />
 
       {/* Intro */}
@@ -46,24 +48,33 @@ export default function CanteenPage() {
           </Reveal>
           <Reveal delay={0.1} className="order-1 lg:order-2">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-ink leading-tight">
-              A distinct format, with its own purpose.
+              {CANTEEN.heading}
             </h2>
-            <div className="space-y-4 mt-6 text-charcoal-soft leading-relaxed">
-              <p>
-                Almost every Malayali family has a Gulf story, and that connection has transformed the way Kerala eats. Mahabelly Canteen celebrates it — Kerala’s own versions of Al Faham, Shawaya and Shawarma sit happily beside comforting Kerala Meals and tiffin classics.
-              </p>
-              <p>
-                The Canteen isn’t a lesser Mahabelly. It’s the everyday one — quicker, more casual, and built for the meals you return to again and again.
-              </p>
-            </div>
+            <p className="mt-6 text-charcoal-soft leading-relaxed">{CANTEEN.intro}</p>
             <ul className="mt-6 space-y-2.5">
-              {distinctions.map((d) => (
+              {CANTEEN.strip.map((d) => (
                 <li key={d} className="flex items-start gap-2.5 text-sm text-charcoal">
                   <Check size={17} className="text-gold mt-0.5 shrink-0" /> {d}
                 </li>
               ))}
             </ul>
           </Reveal>
+        </div>
+      </section>
+
+      {/* Everyday Kerala, in pictures */}
+      <section className="paper pb-16 md:pb-24 -mt-4">
+        <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
+          {everyday.map((d, i) => (
+            <Reveal key={d.name} delay={i * 0.05}>
+              <figure className="overflow-hidden rounded-2xl border border-ink/10 bg-cream-soft">
+                <div className="relative aspect-square">
+                  <Image src={d.image} alt={`${d.name} at Mahabelly Canteen`} fill className="object-cover" sizes="(max-width:768px) 50vw, 25vw" />
+                </div>
+                <figcaption className="px-3 py-2.5 font-sans text-xs font-semibold text-ink">{d.name}</figcaption>
+              </figure>
+            </Reveal>
+          ))}
         </div>
       </section>
 
@@ -79,8 +90,8 @@ export default function CanteenPage() {
             ))}
           </div>
           <Reveal className="mt-10">
-            <Link href="/menu/canteen-saidulajab" className="btn-ghost !text-gold hover:!text-gold-light group">
-              View the Canteen menu <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+            <Link href="/menu/canteen-saidulajab" className="btn-ink w-full sm:w-auto">
+              <BookOpen size={15} className="shrink-0" /> View the Canteen menu
             </Link>
           </Reveal>
         </div>

@@ -1,22 +1,23 @@
 import Link from 'next/link'
-import { ArrowRight, BookOpen } from 'lucide-react'
 import PageHero from '@/components/layout/PageHero'
+import MenuCard, { outletMenuCard } from '@/components/ui/MenuCard'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Reveal from '@/components/ui/Reveal'
 import CTABand from '@/components/layout/CTABand'
 import { pageMeta } from '@/lib/seo'
 import { MENUS } from '@/lib/menus'
+import { HABIBI } from '@/lib/habibi'
 
 export const metadata = pageMeta({
-  title: 'Menus | Mahabelly & Mahabelly Canteen',
+  title: 'Menus | Mahabelly, Mahabelly Canteen & Mahabelly Habibi',
   description:
-    'Browse Mahabelly’s web-readable menus by outlet — the flagship Saket dining menu and the Mahabelly Canteen menus at Saidulajab and Vasant Kunj.',
+    'Browse Mahabelly’s web-readable menus by outlet: the flagship Saket dining menu, the Mahabelly Canteen menus at Saidulajab and Vasant Kunj, and online-only Mahabelly Habibi.',
   path: '/menu',
 })
 
 const groups = [
-  { brand: 'mahabelly' as const, title: 'Mahabelly', blurb: 'The full flagship dining experience — coastal curries, seafood, biryani and hidden gems.' },
-  { brand: 'canteen' as const, title: 'Mahabelly Canteen', blurb: 'Everyday Kerala meals, tiffin and Kerala–Gulf grills, served without ceremony.' },
+  { brand: 'mahabelly' as const, title: 'Mahabelly', blurb: 'The full Kerala dining experience: coastal curries, seafood, biriyani and hidden gems.' },
+  { brand: 'canteen' as const, title: 'Mahabelly Canteen', blurb: 'Everyday Kerala food: Kerala Meals, tiffin favourites, Porotta, curries and teatime bites, served without ceremony.' },
 ]
 
 export default function MenuIndex() {
@@ -25,7 +26,7 @@ export default function MenuIndex() {
       <PageHero
         kicker="Menus"
         title="Choose your outlet"
-        subtitle="Two brands, one soul. Pick a menu to explore."
+        subtitle="Three brands, one soul. Pick a menu to explore."
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Menu' }]}
         image="/photos/sadhya-serving.jpg"
       />
@@ -40,24 +41,35 @@ export default function MenuIndex() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {menus.map((m, i) => (
                     <Reveal key={m.slug} delay={(i % 3) * 0.08}>
-                      <Link
-                        href={`/menu/${m.slug}`}
-                        className="lift group flex flex-col h-full bg-cream-soft border border-ink/10 rounded-2xl hover:border-red/40 hover:shadow-lg p-7"
-                      >
-                        <BookOpen size={26} className={g.brand === 'canteen' ? 'text-gold' : 'text-red'} />
-                        <h3 className="font-display text-2xl font-bold text-ink mt-5">{m.outletName}</h3>
-                        <p className="font-serif italic text-sm text-charcoal-soft mt-1">{m.kicker}</p>
-                        <p className="text-sm text-charcoal-soft mt-4 leading-relaxed flex-1">{m.intro}</p>
-                        <span className="inline-flex items-center gap-1.5 font-sans text-[11px] font-semibold tracking-widest uppercase text-red mt-6 group-hover:gap-2.5 transition-all">
-                          View menu <ArrowRight size={14} />
-                        </span>
-                      </Link>
+                      <MenuCard {...outletMenuCard(m)} />
                     </Reveal>
                   ))}
                 </div>
               </div>
             )
           })}
+
+          {/* Mahabelly Habibi — its own group, online-only (kept out of the Canteen section) */}
+          <div>
+            <SectionHeading
+              kicker="Mahabelly Habibi"
+              title="Kerala x Gulf, Online"
+              subtitle="A specialist Kerala-Arabic menu of Shawarma, Al Faham, Shawai and Mandhi, delivered across serviceable areas in Delhi and Gurgaon."
+              align="left"
+              className="!mx-0 mb-10"
+            />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Reveal>
+                <MenuCard
+                  href={HABIBI.menuHref}
+                  name={HABIBI.name}
+                  kicker={HABIBI.descriptor}
+                  intro="Kerala’s Gulf favourites with a home of their own. See the signature dishes, then order from your city on Swiggy or Zomato."
+                  accent="habibi"
+                />
+              </Reveal>
+            </div>
+          </div>
 
           <Reveal className="bg-ink text-cream/70 rounded-3xl p-8 text-center">
             <p className="font-serif italic text-lg text-cream">

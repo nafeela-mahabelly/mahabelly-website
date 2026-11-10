@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { CheckCircle2, Home, Sparkles } from 'lucide-react'
+import { CheckCircle2, Home } from 'lucide-react'
 import { pageMeta } from '@/lib/seo'
 import { SITE } from '@/lib/site'
 
@@ -49,9 +49,6 @@ export default function ThankYouPage() {
         <div className="flex flex-wrap items-center justify-center gap-3 mt-9">
           <Link href="/" className="btn-red">
             <Home size={16} /> Back to Home
-          </Link>
-          <Link href="/sadhya-festivals" className="btn-outline">
-            <Sparkles size={16} /> Onam Sadhya details
           </Link>
         </div>
 

@@ -47,7 +47,7 @@ export default function AmbienceCarousel({ images, name }: Props) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={images[i]}
-          alt={`${name} — ambience ${i + 1} of ${n}`}
+          alt={`${name}, ambience ${i + 1} of ${n}`}
           className="absolute inset-0 w-full h-full object-cover cursor-zoom-in"
           loading="lazy"
           onClick={() => setOpen(true)}
@@ -134,7 +134,7 @@ export default function AmbienceCarousel({ images, name }: Props) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={images[i]}
-              alt={`${name} — ambience ${i + 1} of ${n}`}
+              alt={`${name}, ambience ${i + 1} of ${n}`}
               className="mx-auto w-auto max-h-[82vh] object-contain rounded-lg"
               onTouchStart={onTouchStart}
               onTouchEnd={onTouchEnd}

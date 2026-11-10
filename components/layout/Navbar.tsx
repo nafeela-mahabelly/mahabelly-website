@@ -5,9 +5,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
-import { Menu, X, CalendarCheck, ShoppingBag, Sparkles } from 'lucide-react'
-import { ALL_NAV, LINKS } from '@/lib/site'
+import { Menu, X, CalendarCheck, ShoppingBag, Phone } from 'lucide-react'
+import { ALL_NAV, LINKS, SITE, waLink } from '@/lib/site'
 import { useReserve } from '@/components/reserve/ReserveModal'
+import WhatsAppIcon from '@/components/ui/WhatsAppIcon'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -89,9 +90,26 @@ export default function Navbar() {
             <Link href={LINKS.orderOnline} className="btn-red !px-4 !py-2.5">
               <ShoppingBag size={14} /> Order
             </Link>
-            <Link href={LINKS.onam} className="btn bg-gold text-ink hover:bg-gold-light !px-4 !py-2.5">
-              <Sparkles size={14} /> Onam ’26
-            </Link>
+            {/* Call + WhatsApp live in the header on desktop (in the bottom bar on mobile)
+                so they never float over page content. */}
+            <a
+              href={`tel:${SITE.phoneRaw}`}
+              aria-label="Call Mahabelly"
+              title={`Call ${SITE.phone}`}
+              className="w-10 h-10 shrink-0 rounded-full flex items-center justify-center text-white bg-[#1B4D3E] hover:opacity-90 transition-opacity"
+            >
+              <Phone size={16} />
+            </a>
+            <a
+              href={waLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat with Mahabelly on WhatsApp"
+              title="Chat on WhatsApp"
+              className="w-10 h-10 shrink-0 rounded-full flex items-center justify-center text-white bg-[#25D366] hover:opacity-90 transition-opacity"
+            >
+              <WhatsAppIcon className="w-5 h-5" />
+            </a>
           </div>
 
           {/* Mobile toggle */}
@@ -114,7 +132,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, x: '100%' }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="xl:hidden fixed inset-0 z-40 bg-ink flex flex-col pt-24 pb-10 overflow-y-auto"
+            className="xl:hidden fixed inset-0 z-40 bg-ink flex flex-col pt-24 pb-[calc(49px+1.5rem+env(safe-area-inset-bottom))] overflow-y-auto"
           >
             <nav className="flex-1 flex flex-col px-8 gap-1" aria-label="Mobile">
               {ALL_NAV.map((l, i) => (
@@ -136,9 +154,6 @@ export default function Navbar() {
               ))}
             </nav>
             <div className="px-8 mt-6 space-y-3">
-              <Link href={LINKS.onam} className="btn bg-gold text-ink hover:bg-gold-light w-full">
-                <Sparkles size={15} /> Book Onam ’26
-              </Link>
               <div className="grid grid-cols-2 gap-3">
                 <button type="button" onClick={() => { setOpen(false); openReserve() }} className="btn-outline w-full">
                   <CalendarCheck size={15} /> Reserve

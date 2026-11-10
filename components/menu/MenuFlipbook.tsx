@@ -62,7 +62,7 @@ export default function MenuFlipbook({ pages, label = 'menu' }: Props) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={page.src}
-            alt={`${label} — page ${i + 1} of ${total}`}
+            alt={`${label}, page ${i + 1} of ${total}`}
             className="max-h-full max-w-full object-contain cursor-zoom-in shadow-sm"
             onClick={() => setFull(true)}
             draggable={false}
@@ -165,7 +165,7 @@ export default function MenuFlipbook({ pages, label = 'menu' }: Props) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={page.src}
-              alt={`${label} — page ${i + 1} of ${total}`}
+              alt={`${label}, page ${i + 1} of ${total}`}
               onClick={() => setZoomed((z) => !z)}
               className={zoomed ? 'max-w-none w-auto h-auto cursor-zoom-out mx-auto' : 'max-h-full max-w-full object-contain cursor-zoom-in mx-auto'}
               draggable={false}

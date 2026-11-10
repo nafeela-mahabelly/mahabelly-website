@@ -44,6 +44,12 @@ const config: Config = {
         },
         // Kerala green — veg markers / botanical accents (used sparingly)
         leaf: '#3f6b3a',
+        // Mahabelly Habibi — orange sampled from the approved logo
+        habibi: {
+          DEFAULT: '#e06c18',
+          dark:    '#b85410',
+          pale:    '#fbe7d6',
+        },
       },
       fontFamily: {
         display: ['var(--font-playfair)', 'Georgia', 'serif'],

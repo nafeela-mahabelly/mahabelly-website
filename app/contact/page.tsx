@@ -10,7 +10,7 @@ import { SITE, OUTLETS, waLink, mapsUrl } from '@/lib/site'
 export const metadata = pageMeta({
   title: 'Contact Mahabelly | Get in Touch',
   description:
-    'Contact Mahabelly — central phone, email and WhatsApp, outlet-wise details, and catering & press enquiry routes across Delhi NCR.',
+    'Contact Mahabelly: central phone, email and WhatsApp, outlet-wise details, and catering & press enquiry routes across Delhi NCR.',
   path: '/contact',
 })
 
@@ -20,7 +20,7 @@ export default function ContactPage() {
       <PageHero
         kicker="Contact"
         title="Get in touch"
-        subtitle="Questions, reservations, catering or feedback — we’d love to hear from you."
+        subtitle="Questions, reservations, catering or feedback? We’d love to hear from you."
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Contact' }]}
         image="/photos/storefront-onam.jpg"
       />

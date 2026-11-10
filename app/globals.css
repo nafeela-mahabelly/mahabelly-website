@@ -58,7 +58,18 @@ select:focus-visible {
 }
 
 /* ── Reusable layout ── */
-.container-x { @apply max-w-7xl mx-auto px-5 sm:px-8; }
+.container-x {
+  @apply max-w-7xl mx-auto;
+  /* px-5 / sm:px-8, but never less than the notch safe-area (viewport-fit=cover) */
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
+}
+@media (min-width: 640px) {
+  .container-x {
+    padding-left: max(2rem, env(safe-area-inset-left));
+    padding-right: max(2rem, env(safe-area-inset-right));
+  }
+}
 
 /* ── Eyebrow / kicker label ── */
 .kicker {

@@ -1,13 +1,17 @@
-import { ShoppingBag, ExternalLink, Store, Star, MapPin } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ShoppingBag, ExternalLink, Store, Star, MapPin, BookOpen } from 'lucide-react'
 import PageHero from '@/components/layout/PageHero'
 import Reveal from '@/components/ui/Reveal'
 import { pageMeta } from '@/lib/seo'
 import { LINKS, ORDER_OUTLETS, OrderOutlet } from '@/lib/site'
+import { HABIBI } from '@/lib/habibi'
+import HabibiCityPicker from '@/components/habibi/HabibiCityPicker'
 
 export const metadata = pageMeta({
-  title: 'Order Online | Mahabelly & Mahabelly Canteen',
+  title: 'Order Online | Mahabelly, Mahabelly Canteen & Mahabelly Habibi',
   description:
-    'Order Mahabelly and Mahabelly Canteen online — direct delivery, or via Zomato and Swiggy across Delhi NCR and Gurgaon.',
+    'Order Mahabelly and Mahabelly Canteen online with direct delivery, or via Zomato and Swiggy across Delhi NCR and Gurgaon. Mahabelly Habibi delivers online-only in Delhi and Gurgaon.',
   path: '/order',
 })
 
@@ -55,7 +59,7 @@ export default function OrderPage() {
       <PageHero
         kicker="Order Online"
         title="Order from Mahabelly"
-        subtitle="Direct delivery, or pick your outlet on Zomato or Swiggy."
+        subtitle="Direct delivery, or pick your outlet on Zomato or Swiggy (including online-only Mahabelly Habibi)."
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Order Online' }]}
       />
 
@@ -89,7 +93,7 @@ export default function OrderPage() {
           <Reveal>
             <div className="flex items-center gap-3 mb-1">
               <span className="h-px flex-1 bg-ink/10" />
-              <span className="font-sans text-[11px] tracking-widest uppercase text-charcoal-mute">Or via delivery apps</span>
+              <span className="font-sans text-[11px] tracking-widest uppercase text-charcoal-mute">Mahabelly &amp; Canteen on delivery apps</span>
               <span className="h-px flex-1 bg-ink/10" />
             </div>
           </Reveal>
@@ -107,6 +111,30 @@ export default function OrderPage() {
               <ShoppingBag size={16} className="text-red mt-0.5 shrink-0" />
               Ordering direct supports the restaurant most. Delivery areas and availability vary by app and outlet hours.
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Mahabelly Habibi — online-only; its own section so it stays separate from the Canteen listing */}
+      <section id="habibi" className="bg-sand py-16 md:py-24 scroll-mt-24">
+        <div className="container-x max-w-3xl">
+          <Reveal>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7 mb-10">
+              <Image src={HABIBI.logo} alt={`${HABIBI.name} logo`} width={761} height={900} className="w-28 h-auto shrink-0" />
+              <div>
+                <span className="kicker text-habibi">{HABIBI.descriptor}</span>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mt-1">Order {HABIBI.name}</h2>
+                <p className="text-charcoal-soft mt-2 leading-relaxed">
+                  Shawarma, Al Faham, Shawai and Mandhi, delivered across serviceable areas in Delhi and Gurgaon.
+                </p>
+                <Link href={HABIBI.menuHref} className="inline-flex items-center gap-1.5 font-sans text-[13px] font-semibold text-habibi-dark hover:underline mt-3">
+                  <BookOpen size={15} className="shrink-0" /> View Habibi Menu
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal>
+            <HabibiCityPicker />
           </Reveal>
         </div>
       </section>

@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url
   const staticPaths = [
     '', '/our-story', '/our-brands', '/menu', '/locations', '/canteen',
-    '/events', '/sadhya-festivals', '/onam-2026', '/catering', '/order', '/mahabelly-gold',
+    '/events', '/sadhya-festivals', '/menu/habibi', '/catering', '/order', '/mahabelly-gold',
     '/our-people', '/press', '/reviews', '/contact', '/policies',
   ]
   const routes = [

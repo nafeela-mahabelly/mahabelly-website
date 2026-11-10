@@ -5,12 +5,12 @@ import SectionHeading from '@/components/ui/SectionHeading'
 import Reveal from '@/components/ui/Reveal'
 import CateringForm from '@/components/forms/CateringForm'
 import { pageMeta } from '@/lib/seo'
-import { CATERING_FORMATS, CATERING_SAMPLE_MENUS } from '@/lib/content'
+import { CATERING_FORMATS, CATERING_SAMPLE_MENUS, CATERING_PARTNERSHIPS, CATERING_GALLERY } from '@/lib/content'
 
 export const metadata = pageMeta({
   title: 'Kerala Catering in Delhi NCR | Mahabelly',
   description:
-    'Plan home gatherings, corporate meals, weddings and festive Kerala feasts with Mahabelly’s catering team. Send an enquiry — we respond within one business day.',
+    'Plan home gatherings, corporate meals, weddings and festive Kerala feasts with Mahabelly’s catering team. Send an enquiry and we’ll respond within one business day.',
   path: '/catering',
 })
 
@@ -20,10 +20,43 @@ export default function CateringPage() {
       <PageHero
         kicker="Catering"
         title="Bring Mahabelly to your table"
-        subtitle="From intimate home gatherings to grand festive feasts — Kerala menus tailored to the occasion."
+        subtitle="From intimate home gatherings to grand festive feasts, Kerala menus tailored to the occasion."
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Catering' }]}
         image="/photos/catering-lights.jpg"
       />
+
+      {/* Catering Partnerships & Celebrations, directly below the introduction */}
+      <section className="paper py-16 md:py-24">
+        <div className="container-x">
+          <Reveal className="max-w-3xl">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-ink leading-tight">{CATERING_PARTNERSHIPS.heading}</h2>
+            <div className="space-y-4 mt-6 text-charcoal-soft leading-relaxed text-lg">
+              {CATERING_PARTNERSHIPS.paragraphs.map((p) => <p key={p}>{p}</p>)}
+            </div>
+          </Reveal>
+
+          {/* Same treatment as the site's other photo galleries: square, rounded-2xl, hairline border */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 mt-12">
+            {CATERING_GALLERY.map((g, i) => (
+              <Reveal key={g.src} delay={(i % 3) * 0.06}>
+                <figure className="h-full overflow-hidden rounded-2xl border border-ink/10 bg-cream-soft">
+                  <div className="relative aspect-square">
+                    <Image
+                      src={g.src}
+                      alt={g.alt}
+                      fill
+                      className="object-cover"
+                      style={{ objectPosition: `50% ${g.focus}` }}
+                      sizes="(max-width:768px) 50vw, 33vw"
+                    />
+                  </div>
+                  <figcaption className="p-3 sm:p-4 text-xs sm:text-sm text-charcoal-soft leading-relaxed">{g.caption}</figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Formats */}
       <section className="paper py-16 md:py-24">

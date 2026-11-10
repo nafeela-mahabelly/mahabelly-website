@@ -5,6 +5,7 @@ import SectionHeading from '@/components/ui/SectionHeading'
 import Reveal from '@/components/ui/Reveal'
 import CTABand from '@/components/layout/CTABand'
 import Reviews from '@/components/Reviews'
+import AwardBanner from '@/components/ui/AwardBanner'
 import { pageMeta } from '@/lib/seo'
 import { PRESS_AWARDS, PRESS_ARTICLES, PRESS_VIDEOS } from '@/lib/content'
 import { SITE } from '@/lib/site'
@@ -12,7 +13,7 @@ import { SITE } from '@/lib/site'
 export const metadata = pageMeta({
   title: 'Mahabelly in the News | Press & Awards',
   description:
-    'Mahabelly in the media — awards, reviews and features from The Hindu, NDTV Food, Times Now, Livemint, Time Out and more.',
+    'Mahabelly in the media: awards, reviews and features from The Hindu, NDTV Food, Times Now, Livemint, Time Out and more.',
   path: '/press',
 })
 
@@ -24,7 +25,7 @@ export default function PressPage() {
         title="Mahabelly in the media"
         subtitle="From restaurant reviews and awards to stories about Kerala food, festivals and entrepreneurship."
         crumbs={[{ label: 'Home', href: '/' }, { label: 'In the News' }]}
-        image="/festivals/times-food-award.jpg"
+        image="/festivals/times-food-award-artwork.jpg"
       />
 
       {/* Awards */}
@@ -34,9 +35,7 @@ export default function PressPage() {
           {PRESS_AWARDS.map((a) => (
             <Reveal key={a.title}>
               <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 items-center bg-ink text-cream overflow-hidden rounded-3xl">
-                <div className="relative aspect-[27/10] min-h-[170px] p-4">
-                  <Image src={a.image} alt={a.title} fill className="object-contain" sizes="(max-width:768px) 100vw, 55vw" />
-                </div>
+                <AwardBanner className="p-4" />
                 <div className="p-8">
                   <Award size={28} className="text-gold-light" />
                   <p className="font-sans text-xs tracking-widest uppercase text-gold-light mt-4">{a.publication}</p>
@@ -64,7 +63,7 @@ export default function PressPage() {
                 “Best South Indian &amp; Coastal Cuisine Restaurant, Delhi.”
               </p>
               <p className="text-charcoal-soft mt-4 leading-relaxed">
-                The Mahabelly team, on stage to receive the Times Food &amp; Nightlife Awards across the years — a recognition we owe entirely to our guests.
+                The Mahabelly team, on stage to receive the Times Food &amp; Nightlife Awards across the years, a recognition we owe entirely to our guests.
               </p>
             </div>
           </Reveal>
@@ -84,10 +83,13 @@ export default function PressPage() {
                   rel="noopener noreferrer"
                   className="lift group flex flex-col h-full bg-cream-soft border border-ink/10 rounded-2xl hover:border-red/40 p-6"
                 >
-                  <p className="font-sans text-[11px] tracking-widest uppercase text-red">{p.publication}</p>
+                  <p className="font-sans text-[11px] tracking-widest uppercase text-red">
+                    {p.publication}
+                    {p.date && <span className="text-charcoal-mute"> · <time>{p.date}</time></span>}
+                  </p>
                   <h3 className="font-display text-lg font-bold text-ink mt-2 leading-snug flex-1">{p.title}</h3>
                   <span className="inline-flex items-center gap-1.5 font-sans text-[11px] tracking-wide uppercase text-charcoal-mute group-hover:text-red mt-4">
-                    Read <ExternalLink size={12} />
+                    {p.cta ?? 'Read'} <ExternalLink size={12} />
                   </span>
                 </a>
               </Reveal>

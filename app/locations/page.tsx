@@ -8,7 +8,7 @@ import { OUTLETS } from '@/lib/site'
 export const metadata = pageMeta({
   title: 'Mahabelly Locations | Delhi NCR, Gurgaon & Sonipat',
   description:
-    'Find Mahabelly and Mahabelly Canteen locations across Delhi NCR — menus, timings, directions, reservations and online ordering links.',
+    'Find Mahabelly and Mahabelly Canteen locations across Delhi NCR, with menus, timings, directions, reservations and online ordering links.',
   path: '/locations',
 })
 

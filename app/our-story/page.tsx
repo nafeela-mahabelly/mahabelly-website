@@ -4,7 +4,7 @@ import SectionHeading from '@/components/ui/SectionHeading'
 import Reveal from '@/components/ui/Reveal'
 import CTABand from '@/components/layout/CTABand'
 import { pageMeta } from '@/lib/seo'
-import { TIMELINE, FOUNDERS, PEOPLE_GROUPS } from '@/lib/content'
+import { TIMELINE, PEOPLE_GROUPS } from '@/lib/content'
 
 export const metadata = pageMeta({
   title: 'Our Story | Mahabelly Kerala Restaurants',
@@ -33,25 +33,37 @@ export default function OurStoryPage() {
             </div>
           </Reveal>
           <Reveal delay={0.1} className="prose-belly">
+            {/* The single founder introduction on this page */}
             <p className="text-lg text-charcoal leading-relaxed">
-              Some ideas do not begin as business plans. They begin as cravings.
+              Mahabelly was founded in Delhi in 2015 by childhood friends <strong>Zachariah Jacob</strong>, <strong>Thomas Fenn</strong> and <strong>Dr. Prem Kiran</strong>. What began as a college dream became a restaurant built with determination, support from friends and family, and a belief that Kerala’s food and culture deserved a larger stage.
             </p>
             <p>
-              For Mahabelly, the journey began with a feeling every Malayali living away from home knows well: missing appam and stew, fish curry and red rice, the crackle of curry leaves in coconut oil, and food that can take you home with a single bite.
+              Thomas has since hung up his boots at Mahabelly. His contribution to its founding years remains a valued part of the story, and the team looks back on that chapter with gratitude.
             </p>
             <p>
-              Founded in Delhi in 2015 by childhood friends <strong>Zachariah Jacob</strong>, <strong>Thomas Fenn</strong> and <strong>Dr Prem Kiran</strong>, Mahabelly grew from a college dream into a larger purpose: to give Kerala’s cuisine and culture the stage they deserve. Beyond dosa, idli and sambar lies a rich culinary world shaped by the coast, Syrian Christian homes, Malabar’s Mappila kitchens, temple traditions, toddy shops, festive Sadhyas and Kerala’s long relationship with the Gulf.
-            </p>
-            <p>
-              The first Mahabelly outlet was inaugurated by Dr Shashi Tharoor in 2015. Nearly a decade later, in 2024, he returned to relaunch Mahabelly in Saket. It was a meaningful full circle moment that reflected how far the brand had come and marked the beginning of a new chapter.
-            </p>
-            <p>
-              Today, Zachariah runs Mahabelly with his family and a team of around 160 people. The mission is bigger than running restaurants. It is about celebrating Kerala through food, festivals, stories, experiences and community. It is also about creating opportunities for the people building Mahabelly and sharing the warmth and depth of Kerala’s culture with people from every background.
+              Mahabelly is run by Zachariah Jacob with the support of his family. The mission is bigger than running restaurants. It is about celebrating Kerala through food, festivals, stories, experiences and community. It is also about creating opportunities for the people building Mahabelly and sharing the warmth and depth of Kerala’s culture with people from every background.
             </p>
             <p>
               For Malayalis, Mahabelly is a taste of home. For those discovering Kerala for the first time, it is an invitation to pull up a chair and explore, one honest and generous meal at a time.
             </p>
           </Reveal>
+        </div>
+
+        {/* Team photo strip: same 4:3, rounded-2xl treatment as Our People below */}
+        <div className="container-x grid sm:grid-cols-2 gap-5 mt-14 md:mt-20">
+          {[
+            { src: '/photos/team/staff-team-kitchen.jpg', alt: 'The Mahabelly kitchen team in chef whites', caption: 'Our kitchen team' },
+            { src: '/photos/team/staff-team-service.jpg', alt: 'The Mahabelly service team in the dining room', caption: 'Our service team' },
+          ].map((p, i) => (
+            <Reveal key={p.src} delay={i * 0.08}>
+              <figure>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                  <Image src={p.src} alt={p.alt} fill className="object-cover object-[50%_60%]" sizes="(max-width:640px) 100vw, 50vw" />
+                </div>
+                <figcaption className="mt-2.5 text-sm text-charcoal-soft">{p.caption}</figcaption>
+              </figure>
+            </Reveal>
+          ))}
         </div>
       </section>
 
@@ -74,22 +86,13 @@ export default function OurStoryPage() {
         </div>
       </section>
 
-      {/* Founders + mission */}
+      {/* Mission */}
       <section className="paper py-20 md:py-28">
         <div className="container-x max-w-4xl">
-          <Reveal className="text-center">
-            <span className="kicker text-red">The Founders</span>
-            <div className="rule" />
-            <p className="font-display text-2xl md:text-3xl text-ink leading-snug">
-              {FOUNDERS.names.join(' · ')}
-            </p>
-            <p className="text-charcoal-soft leading-relaxed mt-6 max-w-2xl mx-auto">{FOUNDERS.text}</p>
-          </Reveal>
-
-          <Reveal className="mt-14 bg-cream-soft border border-ink/10 p-8 md:p-12 text-center">
+          <Reveal className="bg-cream-soft border border-ink/10 p-8 md:p-12 text-center">
             <span className="kicker text-red">The Larger Mission</span>
             <blockquote className="font-serif italic text-2xl md:text-3xl text-ink leading-snug mt-4">
-              To make Kerala cuisine better understood, and more widely celebrated — beyond the familiar shorthand of ‘South Indian food’.
+              To make Kerala cuisine better understood, and more widely celebrated, beyond the familiar shorthand of ‘South Indian food’.
             </blockquote>
           </Reveal>
         </div>
@@ -100,7 +103,7 @@ export default function OurStoryPage() {
         <div className="container-x">
           <SectionHeading kicker="Our People" title="The people behind the plates" subtitle="Mahabelly is built by chefs, servers, stewards, managers and delivery teams whose care is felt in every meal." />
           <div className="space-y-14 md:space-y-20 mt-16">
-            {PEOPLE_GROUPS.map((g, i) => (
+            {PEOPLE_GROUPS.filter((g) => g.title !== 'The founders').map((g, i) => (
               <Reveal key={g.title}>
                 <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                   <div className={`relative aspect-[4/3] overflow-hidden rounded-2xl ${i % 2 ? 'lg:order-2' : ''}`}>
@@ -121,8 +124,20 @@ export default function OurStoryPage() {
             <p className="font-display text-5xl md:text-6xl font-black text-red">≈ 160</p>
             <p className="font-serif italic text-2xl text-ink mt-2">One Mahabelly family.</p>
             <p className="text-charcoal-soft mt-4 leading-relaxed">
-              Around 160 people cook, serve, manage, deliver and carry the story forward every day — many of whom have grown with the brand, from steward to captain, from cook to kitchen leader.
+              Around 160 people cook, serve, manage, deliver and carry the story forward every day, many of whom have grown with the brand, from steward to captain, from cook to kitchen leader.
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Closing */}
+      <section className="bg-ink text-cream py-16 md:py-20">
+        <div className="container-x max-w-3xl text-center">
+          <Reveal>
+            <p className="font-serif italic text-2xl md:text-3xl leading-snug text-cream">
+              Our purpose is to share Kerala’s food and culture, bring people together and create opportunities for our team.
+            </p>
+            <p className="font-display text-2xl md:text-3xl font-bold text-red-light mt-4">More Malayali food for more people.</p>
           </Reveal>
         </div>
       </section>

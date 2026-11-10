@@ -16,6 +16,10 @@ export default function StorySection() {
             <div className="absolute -bottom-8 -right-4 sm:-right-8 w-40 sm:w-52 aspect-square border-4 border-cream-soft overflow-hidden shadow-xl hidden sm:block">
               <Image src="/photos/team-garland.jpg" alt="The Mahabelly team" fill className="object-cover" sizes="200px" />
             </div>
+            {/* Wider team, mirrored inset (same border/shadow treatment as the one above) */}
+            <div className="absolute -top-8 -left-4 sm:-left-8 w-36 sm:w-44 aspect-square border-4 border-cream-soft overflow-hidden shadow-xl hidden sm:block">
+              <Image src="/photos/team/staff-team-together.jpg" alt="The wider Mahabelly team together in festive Kerala dress" fill className="object-cover object-[50%_55%]" sizes="180px" />
+            </div>
           </div>
         </Reveal>
 
@@ -31,7 +35,7 @@ export default function StorySection() {
               For Mahabelly, the journey began with the longing every Malayali away from home understands: for appam and stew, fish curry and red rice, the crackle of curry leaves in coconut oil, and food that can carry you home in a single bite.
             </p>
             <p>
-              Founded in Delhi in 2015 by childhood friends Zachariah Jacob, Thomas Fenn and Dr Prem Kiran, Mahabelly grew from a college-day dream into a larger purpose: to give Kerala’s cuisine and culture the stage they deserve.
+              Founded in Delhi in 2015 by childhood friends Zachariah Jacob, Thomas Fenn and Dr. Prem Kiran, Mahabelly grew from a college-day dream into a larger purpose: to give Kerala’s cuisine and culture the stage they deserve.
             </p>
           </div>
           <blockquote className="font-serif italic text-2xl text-ink mt-8 border-l-2 border-red pl-5">
