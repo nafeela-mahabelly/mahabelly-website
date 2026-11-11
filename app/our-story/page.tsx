@@ -29,7 +29,7 @@ export default function OurStoryPage() {
         <div className="container-x grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <Reveal>
             <div className="relative aspect-[4/3] overflow-hidden">
-              <Image src="/photos/team-mahabelly.jpg" alt="The Mahabelly restaurant team outside the Mahabelly storefront" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
+              <Image src="/photos/team/founders-award.jpg" alt="The Mahabelly founders on stage at the Times Food Awards, holding the award certificate" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
             </div>
           </Reveal>
           <Reveal delay={0.1} className="prose-belly">
@@ -50,15 +50,16 @@ export default function OurStoryPage() {
         </div>
 
         {/* Team photo strip: same 4:3, rounded-2xl treatment as Our People below */}
-        <div className="container-x grid sm:grid-cols-2 gap-5 mt-14 md:mt-20">
+        <div className="container-x grid sm:grid-cols-3 gap-5 mt-14 md:mt-20">
           {[
+            { src: '/photos/team-mahabelly.jpg', alt: 'The Mahabelly restaurant team outside the Mahabelly storefront', caption: 'Our restaurant team' },
             { src: '/photos/team/staff-team-kitchen.jpg', alt: 'The Mahabelly kitchen team in chef whites', caption: 'Our kitchen team' },
             { src: '/photos/team/staff-team-service.jpg', alt: 'The Mahabelly service team in the dining room', caption: 'Our service team' },
           ].map((p, i) => (
             <Reveal key={p.src} delay={i * 0.08}>
               <figure>
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-                  <Image src={p.src} alt={p.alt} fill className="object-cover object-[50%_60%]" sizes="(max-width:640px) 100vw, 50vw" />
+                  <Image src={p.src} alt={p.alt} fill className="object-cover object-[50%_60%]" sizes="(max-width:640px) 100vw, 33vw" />
                 </div>
                 <figcaption className="mt-2.5 text-sm text-charcoal-soft">{p.caption}</figcaption>
               </figure>

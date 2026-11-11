@@ -11,7 +11,7 @@ export default function StorySection() {
         <Reveal className="order-2 lg:order-1">
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden">
-              <Image src="/photos/team-mahabelly.jpg" alt="The Mahabelly restaurant team" fill className="object-cover object-top" sizes="(max-width:1024px) 100vw, 45vw" />
+              <Image src="/photos/team/team-onam.jpg" alt="The Mahabelly team together at an Onam celebration" fill className="object-cover object-top" sizes="(max-width:1024px) 100vw, 45vw" />
             </div>
             <div className="absolute -bottom-8 -right-4 sm:-right-8 w-40 sm:w-52 aspect-square border-4 border-cream-soft overflow-hidden shadow-xl hidden sm:block">
               <Image src="/photos/team-garland.jpg" alt="The Mahabelly team" fill className="object-cover" sizes="200px" />
