@@ -188,7 +188,7 @@ export default function Footer() {
           <p className="font-sans text-xs text-cream/35 text-center sm:text-left">
             © {year} {SITE.name} · {SITE.legalName}. All rights reserved.
           </p>
-          <p className="font-sans text-xs text-cream/35">Born in Delhi. Rooted in Kerala. Since {SITE.since}.</p>
+          <p className="font-sans text-xs text-cream/35">Born in Delhi. Rooted in Kerala. Served with soul.</p>
         </div>
       </div>
     </footer>
