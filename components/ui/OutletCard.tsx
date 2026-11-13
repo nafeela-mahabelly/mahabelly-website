@@ -21,11 +21,11 @@ export default function OutletCard({
 }) {
   const dark = tone === 'dark'
   const ambience = showAmbience ? getAmbience(outlet.slug) : undefined
-  const services = [
+  const services = outlet.serviceLabels ?? ([
     outlet.dineIn && 'Dine-in',
     outlet.takeaway && 'Takeaway',
     outlet.delivery && 'Delivery',
-  ].filter(Boolean) as string[]
+  ].filter(Boolean) as string[])
 
   return (
     <div

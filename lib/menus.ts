@@ -610,7 +610,7 @@ const vasantKunj: Menu = {
   brand: 'canteen',
   kicker: 'Everyday Kerala Canteen',
   intro:
-    'Kerala tiffin, comforting meals, snacc appams and belly burgers, served at The Kunj in Vasant Kunj.',
+    'Kerala tiffin, comforting meals, snacc appams and porotta and curries, served at The Kunj in Vasant Kunj.',
   footnotes: ['Taxes extra as applicable. All items subject to availability.'],
   specials: [
     { name: 'Kanji & Payar', desc: 'Comforting rice porridge with green gram', image: '/dishes/vk-kanji.jpg' },

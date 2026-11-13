@@ -1,15 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, BookOpen, MapPin, ShoppingBag } from 'lucide-react'
+import { BookOpen, CalendarCheck, MapPin, ShoppingBag } from 'lucide-react'
 import PageHero from '@/components/layout/PageHero'
 import SectionHeading from '@/components/ui/SectionHeading'
 import OutletCard from '@/components/ui/OutletCard'
 import Reveal from '@/components/ui/Reveal'
 import CTABand from '@/components/layout/CTABand'
 import MenuCard, { outletMenuCard } from '@/components/ui/MenuCard'
+import ReserveButton from '@/components/reserve/ReserveButton'
 import { HABIBI } from '@/lib/habibi'
 import { pageMeta } from '@/lib/seo'
-import { OUTLETS } from '@/lib/site'
+import { OUTLETS, LINKS } from '@/lib/site'
 import { MENUS } from '@/lib/menus'
 
 export const metadata = pageMeta({
@@ -19,10 +20,14 @@ export const metadata = pageMeta({
   path: '/our-brands',
 })
 
-interface BrandAction {
-  label: string
-  href: string
-  kind: 'menu' | 'order' | 'more'
+// Every brand card shows the same three actions, in the same order and style.
+// `reserve: true` opens the site-wide Reserve popup (lists Saket + both Canteens).
+// `reserve: false` = no reservation link/flow exists for that brand yet, so the
+// button is omitted rather than pointed at a guessed destination.
+interface BrandActions {
+  menu: string
+  reserve: boolean
+  order: string
 }
 
 interface BrandCard {
@@ -32,7 +37,7 @@ interface BrandCard {
   logoClass?: string
   blurb: string
   accent: string
-  actions: BrandAction[]
+  actions: BrandActions
 }
 
 const brands: BrandCard[] = [
@@ -43,7 +48,7 @@ const brands: BrandCard[] = [
     blurb:
       'The full Kerala table: coastal curries, toddy-shop plates, Malabar biriyani, seafood and the grand Onam Sadhya. A sit-down celebration of Kerala’s culinary depth.',
     accent: 'text-red',
-    actions: [{ label: 'View menu', href: '/menu/saket', kind: 'menu' }],
+    actions: { menu: '/menu/saket', reserve: true, order: LINKS.orderOnline },
   },
   {
     name: 'Mahabelly Canteen',
@@ -52,23 +57,18 @@ const brands: BrandCard[] = [
     blurb:
       'Everyday Kerala food in a warm, casual setting. Kerala Meals, tiffin favourites, Porotta, curries and teatime bites, made for the meals you return to again and again.',
     accent: 'text-gold',
-    actions: [
-      { label: 'View menu', href: '/menu/canteen-saidulajab', kind: 'menu' },
-      { label: 'About the Canteen', href: '/canteen', kind: 'more' },
-    ],
+    actions: { menu: '/menu/canteen-saidulajab', reserve: true, order: LINKS.orderOnline },
   },
   {
-    // Delivery-only: no Reserve a Table, no dine-in directions.
+    // Reserve Table requested for Habibi too, but no Habibi reservation link/flow
+    // exists yet (online-only brand). Set reserve: true once one is provided.
     name: HABIBI.name,
     tag: HABIBI.descriptor,
     logo: HABIBI.logo,
     logoClass: 'h-24',
     blurb: HABIBI.brandCard,
     accent: 'text-habibi',
-    actions: [
-      { label: 'View Habibi Menu', href: HABIBI.menuHref, kind: 'menu' },
-      { label: 'Order Habibi', href: HABIBI.orderHref, kind: 'order' },
-    ],
+    actions: { menu: HABIBI.menuHref, reserve: false, order: HABIBI.orderHref },
   },
 ]
 
@@ -96,23 +96,19 @@ export default function OurBrandsPage() {
                 <h2 className="font-display text-2xl font-bold text-ink mt-5">{b.name}</h2>
                 <span className={`kicker ${b.accent} mt-2`}>{b.tag}</span>
                 <p className="text-charcoal-soft leading-relaxed mt-3 flex-1">{b.blurb}</p>
-                {/* Full-width & stacked on phones so the buttons line up; inline from sm */}
-                <div className="grid sm:flex sm:flex-wrap gap-3 mt-6">
-                  {b.actions.map((a) =>
-                    a.kind === 'menu' ? (
-                      <Link key={a.label} href={a.href} className="btn-ink">
-                        <BookOpen size={15} className="shrink-0" /> {a.label}
-                      </Link>
-                    ) : a.kind === 'order' ? (
-                      <Link key={a.label} href={a.href} className="btn bg-habibi text-white hover:bg-habibi-dark">
-                        <ShoppingBag size={15} className="shrink-0" /> {a.label}
-                      </Link>
-                    ) : (
-                      <Link key={a.label} href={a.href} className="btn-outline-ink">
-                        {a.label} <ArrowRight size={15} className="shrink-0" />
-                      </Link>
-                    ),
+                {/* Same three actions on every card, stacked full-width so they line up across cards */}
+                <div className="grid gap-3 mt-6">
+                  <Link href={b.actions.menu} className="btn-ink w-full">
+                    <BookOpen size={15} className="shrink-0" /> View Menu
+                  </Link>
+                  {b.actions.reserve && (
+                    <ReserveButton className="btn-outline-ink w-full">
+                      <CalendarCheck size={15} className="shrink-0" /> Reserve Table
+                    </ReserveButton>
                   )}
+                  <Link href={b.actions.order} className="btn-red w-full">
+                    <ShoppingBag size={15} className="shrink-0" /> Order Online
+                  </Link>
                 </div>
               </div>
             </Reveal>
@@ -170,7 +166,7 @@ export default function OurBrandsPage() {
                 href={HABIBI.menuHref}
                 name={HABIBI.name}
                 kicker={HABIBI.descriptor}
-                intro="A specialist Kerala-Arabic menu of Shawarma, Al Faham, Shawai and Mandhi, with live menus and prices on Swiggy and Zomato."
+                intro="A specialist Kerala-Arabic menu of Shawarma, Al Faham, Shawai and Mandhi, with live menus on Zomato & Swiggy."
                 accent="habibi"
               />
             </Reveal>

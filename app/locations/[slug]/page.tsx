@@ -36,9 +36,7 @@ export default async function OutletPage({ params }: { params: Promise<{ slug: s
   const book = !o.menuSlug ? getMenuBook(o.slug) : undefined
 
   const services = [
-    o.dineIn && 'Dine-in',
-    o.takeaway && 'Takeaway',
-    o.delivery && 'Delivery',
+    ...(o.serviceLabels ?? [o.dineIn && 'Dine-in', o.takeaway && 'Takeaway', o.delivery && 'Delivery']),
     o.reservation && 'Reservations',
   ].filter(Boolean) as string[]
 

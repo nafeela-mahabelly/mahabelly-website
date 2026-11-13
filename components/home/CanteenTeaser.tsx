@@ -24,15 +24,12 @@ export default function CanteenTeaser() {
         <Reveal delay={0.1} className="flex flex-col items-center">
           <div className="relative">
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-cream-soft border border-gold/30 flex items-center justify-center shadow-xl">
-              <Image src="/brand/canteen-logo.png" alt="Mahabelly Canteen" width={320} height={320} className="w-52 md:w-60 h-auto object-contain" />
+              <Image src="/brand/canteen-logo.png" alt="Mahabelly Canteen" width={320} height={320} className="w-44 md:w-52 h-auto object-contain" />
             </div>
-            {/* Everyday-Kerala Canteen dishes (real Canteen photography).
-                Both sit on the upper corners, outside the logo's wordmark band, so neither covers "Mahabelly Canteen". */}
-            <div className="absolute -left-8 top-0 md:-left-10 w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 border-sand shadow-lg">
-              <Image src="/dishes/said-porotta-chicken.jpg" alt="Porotta and chicken curry at Mahabelly Canteen" fill className="object-cover" sizes="96px" />
-            </div>
-            <div className="absolute -right-8 top-0 md:-right-10 w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 border-sand shadow-lg">
-              <Image src="/dishes/vk-appam-kurma.jpg" alt="Appam and vegetable kurma at Mahabelly Canteen" fill className="object-cover" sizes="96px" />
+            {/* Single Kerala meal thali, overlapping the upper-right edge of the logo circle,
+                above the wordmark band and beside the icon, so it never covers "Mahabelly Canteen". */}
+            <div className="absolute -right-10 -top-3 md:-right-14 md:-top-4 w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-sand shadow-lg bg-cream-soft">
+              <Image src="/photos/canteen-thali.jpg" alt="A Kerala meal thali with rice, chapati, pappadam and curries" fill className="object-cover scale-[1.08]" sizes="144px" />
             </div>
           </div>
           {/* Strip wraps on narrow screens instead of running off the edge */}

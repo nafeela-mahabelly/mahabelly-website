@@ -125,7 +125,7 @@ export const STATS = [
   { value: '2015', label: 'The year it began' },
   { value: '6', label: 'Locations across Delhi NCR & Sonipat' },
   { value: '160', label: 'One Mahabelly family' },
-  { value: 'Lakhs', label: 'Of guests, & countless Kerala cravings' },
+  { value: 'Lakhs', label: 'Of guests & countless Kerala cravings' },
 ]
 
 // ── Locations ───────────────────────────────────────────────────
@@ -145,6 +145,8 @@ export interface Outlet {
   takeaway: boolean
   delivery: boolean
   reservation: boolean
+  /** Overrides the auto-generated service tags (Dine-in / Takeaway / Delivery) */
+  serviceLabels?: string[]
   /** slug of the web menu on /menu, if a dedicated menu exists */
   menuSlug?: string
   note?: string
@@ -194,7 +196,7 @@ export const OUTLETS: Outlet[] = [
     address:
       'The Kunj, Plot No. 8, Nelson Mandela Marg, Vasant Kunj, New Delhi 110070',
     mapsQuery: 'Mahabelly Canteen The Kunj Vasant Kunj, New Delhi',
-    hours: '11:00 AM – 11:00 PM',
+    hours: '11:00 AM – 8:00 PM',
     dineIn: true,
     takeaway: true,
     delivery: true,
@@ -210,11 +212,13 @@ export const OUTLETS: Outlet[] = [
     city: 'New Delhi',
     address: 'Lado Serai, New Delhi',
     mapsQuery: 'Mahabelly Lado Serai, New Delhi',
-    hours: '12:00 PM – 11:00 PM',
+    hours: '9:00 AM – 11:00 PM',
     dineIn: true,
     takeaway: true,
     delivery: true,
     reservation: true,
+    // Shown instead of the auto Dine-in / Takeaway / Delivery tags
+    serviceLabels: ['Central & Delivery Kitchen'],
   },
   {
     slug: 'gurgaon',
@@ -241,7 +245,7 @@ export const OUTLETS: Outlet[] = [
     city: 'Sonipat',
     address: 'O.P. Jindal Global University, Sonipat, Haryana 131001',
     mapsQuery: 'O.P. Jindal Global University Sonipat',
-    hours: '9:00 AM – 9:00 PM',
+    hours: '12:00 PM – 12:00 AM',
     dineIn: true,
     takeaway: true,
     delivery: false,

@@ -22,7 +22,7 @@ export const EXPERIENCES = [
   {
     title: 'Kerala Seafood',
     blurb: 'Fish and prawns layered with coconut, raw mango, kokum and regional spice blends.',
-    image: '/art/fish-curry-pan.png',
+    image: '/photos/exp-prawns-thali.jpg',
   },
   {
     title: 'Toddy-Shop Plates',
@@ -163,6 +163,10 @@ export const CATERING_GALLERY = [
   { src: '/photos/catering/catering-sadhya-plating.jpg', focus: '70%', alt: 'A Mahabelly team member serving curries onto banana leaves at a floor-seated Sadhya', caption: 'Traditional banana-leaf Sadhya, served course by course.' },
   { src: '/photos/catering/catering-onam-spread.jpg', focus: '70%', alt: 'Guests seated along a long table set with banana leaves as the team serves the Sadhya', caption: 'A full Onam Sadhya spread, laid out for the festival.' },
   { src: '/photos/catering/catering-team-serving.jpg', focus: '40%', alt: 'Smiling guests seated on the floor before banana leaves, with a Mahabelly server behind them', caption: 'Our team in action, serving with care.' },
+  // Non-Sadhya catering: buffet and event formats
+  { src: '/photos/catering/catering-event-setup.jpg', focus: '50%', alt: 'A garden event lit with fairy lights, with a buffet counter of chafing dishes along the wall', caption: 'Evening events, with the buffet set up and ready.' },
+  { src: '/photos/catering/catering-buffet-service.jpg', focus: '45%', alt: 'Guests at a rooftop buffet at sunset being served wraps by the Mahabelly team', caption: 'Buffet service for large groups, served hot from the counter.' },
+  { src: '/photos/catering/catering-buffet-snacks.jpg', focus: '40%', alt: 'Three smiling guests enjoying fried Kerala snacks at an evening event', caption: 'Kerala snacks that keep the conversation going.' },
 ]
 
 // ── Sadhya & Festivals FAQs (brief §6E) ─────────────────────────

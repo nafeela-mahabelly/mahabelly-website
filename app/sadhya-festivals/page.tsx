@@ -61,7 +61,7 @@ export default function SadhyaPage() {
             {SADHYA_GALLERY.map((s, i) => (
               <Reveal key={s.src} delay={(i % 3) * 0.05}>
                 <div className="relative aspect-square overflow-hidden rounded-2xl border border-ink/10">
-                  <Image src={s.src} alt={s.alt} fill className="object-cover" sizes="(max-width:768px) 50vw, 33vw" />
+                  <Image src={s.src} alt={s.alt} fill className="object-cover" style={{ objectPosition: `50% ${s.focus ?? '50%'}` }} sizes="(max-width:768px) 50vw, 33vw" />
                 </div>
               </Reveal>
             ))}

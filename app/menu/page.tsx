@@ -53,7 +53,7 @@ export default function MenuIndex() {
           <div>
             <SectionHeading
               kicker="Mahabelly Habibi"
-              title="Kerala x Gulf, Online"
+              title="Kerala x Gulf"
               subtitle="A specialist Kerala-Arabic menu of Shawarma, Al Faham, Shawai and Mandhi, delivered across serviceable areas in Delhi and Gurgaon."
               align="left"
               className="!mx-0 mb-10"

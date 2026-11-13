@@ -11,7 +11,7 @@ interface Shot { src: string; w: number; h: number; alt: string }
 
 const SHOTS: Shot[] = [
   { src: '/gallery/g18.jpg', w: 2200, h: 1760, alt: 'The Mahabelly Saket storefront at DLF Avenue Mall' },
-  { src: '/gallery/g12.jpg', w: 1500, h: 1500, alt: 'Onam Sadhya served on a banana leaf' },
+  { src: '/gallery/gallery-grilled-chicken.jpg', w: 1254, h: 1254, alt: 'Chargrilled chicken on a banana leaf with garlic dip and pickled vegetables' },
   { src: '/gallery/gallery-appetizer-platter.jpg', w: 1350, h: 1800, alt: 'Kerala-style appetisers served on banana leaf with green chutney' },
   { src: '/gallery/g4.jpg', w: 1500, h: 1000, alt: 'An Onam cultural evening with Kathakali artists' },
   { src: '/gallery/g17.jpg', w: 2200, h: 1760, alt: 'Kathakali mural inside Mahabelly Saket' },
@@ -19,6 +19,7 @@ const SHOTS: Shot[] = [
   { src: '/gallery/g2.jpg', w: 1500, h: 1108, alt: 'Kerala red matta rice' },
   { src: '/gallery/g9.jpg', w: 1261, h: 1891, alt: '#MealsReady: Mahabelly Sadhya takeaway on a banana leaf' },
   { src: '/gallery/g8.jpg', w: 1500, h: 1000, alt: 'Prawn curry in a traditional brass pot' },
+  { src: '/gallery/gallery-wrap-roll.jpg', w: 1254, h: 1254, alt: 'A wrap roll cut in half, served with garlic dip, pickled vegetables and green chilli' },
   { src: '/gallery/gallery-interior-dining.jpg', w: 1800, h: 1440, alt: 'Cane chairs and tiled tables set for service in the Mahabelly dining room' },
   { src: '/gallery/g16.jpg', w: 1536, h: 2048, alt: 'Inside a Mahabelly Canteen dining room' },
   { src: '/gallery/g11.jpg', w: 1500, h: 1500, alt: 'Kappa, mashed tapioca tempered with spices' },
@@ -27,11 +28,13 @@ const SHOTS: Shot[] = [
   { src: '/gallery/gallery-kanji-spread.jpg', w: 1350, h: 1800, alt: 'Kanji in a clay pot with pappadam, green gram and pickles' },
   { src: '/gallery/g19.jpg', w: 2200, h: 1650, alt: 'Dr. Shashi Tharoor lighting the ceremonial lamp at Mahabelly' },
   { src: '/gallery/g3.jpg', w: 1410, h: 1800, alt: 'Kerala-style moru curry' },
+  { src: '/gallery/gallery-pork-roast.jpg', w: 900, h: 1600, alt: 'Kerala pork roast with dried red chillies, served with flaky porotta' },
   { src: '/gallery/g14.jpg', w: 1500, h: 1015, alt: 'Appam & stew, a Kerala breakfast' },
   { src: '/gallery/gallery-team-celebration.jpg', w: 1800, h: 1200, alt: 'The Mahabelly team celebrating together beneath marigold garlands' },
   { src: '/gallery/g20.jpg', w: 2200, h: 1650, alt: 'Dr. Shashi Tharoor with the Mahabelly team' },
   { src: '/gallery/g13.jpg', w: 1500, h: 1500, alt: 'A traditional Kerala meal on a banana leaf' },
   { src: '/gallery/g15.jpg', w: 2200, h: 1467, alt: 'Mahabelly Canteen storefront in Saidulajab' },
+  { src: '/gallery/gallery-kerala-meal-bowl.jpg', w: 1200, h: 1600, alt: 'A bowl of Kerala chicken curry with porotta, curry leaves and whole spices' },
   { src: '/gallery/gallery-alfaham-biryani.jpg', w: 1254, h: 1254, alt: 'Al Faham chicken on Biriyani rice' },
   { src: '/gallery/g7.jpg', w: 509, h: 504, alt: 'Mahabelly celebrated by guests and dignitaries' },
 ]
