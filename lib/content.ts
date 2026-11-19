@@ -116,7 +116,7 @@ export const PEOPLE_GROUPS = [
   {
     title: 'Present stewardship',
     text: 'Mahabelly is run by Zachariah Jacob with the support of his family. A growing team stands behind every kitchen and outlet.',
-    image: '/photos/team-award.jpg',
+    image: '/photos/team/stewardship-team-onam.jpg',
   },
   {
     title: 'The Mahabelly family',

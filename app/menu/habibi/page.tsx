@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ShoppingBag } from 'lucide-react'
+import { ShoppingBag, Download } from 'lucide-react'
 import PageHero from '@/components/layout/PageHero'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Reveal from '@/components/ui/Reveal'
 import HabibiCityPicker from '@/components/habibi/HabibiCityPicker'
+import MenuFlipbook from '@/components/menu/MenuFlipbook'
+import { getMenuBook } from '@/lib/menuBooks'
 import { pageMeta } from '@/lib/seo'
 import { HABIBI, HABIBI_DISHES } from '@/lib/habibi'
 
@@ -17,7 +19,10 @@ export const metadata = pageMeta({
   path: '/menu/habibi',
 })
 
+const HABIBI_MENU_PDF = '/menus/habibi-menu-latest.pdf'
+
 export default function HabibiMenuPage() {
+  const book = getMenuBook('habibi')
   return (
     <>
       <PageHero
@@ -73,8 +78,27 @@ export default function HabibiMenuPage() {
         </div>
       </section>
 
+      {/* Full menu: page images + PDF, same flipbook as the outlet menus */}
+      {book && (
+        <section id="menu" className="paper py-16 md:py-24 scroll-mt-24">
+          <div className="container-x">
+            <SectionHeading
+              kicker="The Menu"
+              title="Flip through the menu"
+              subtitle="Swipe, use the arrows, or tap any page to view it full-screen."
+            />
+            <MenuFlipbook pages={book} label={`${HABIBI.name} menu`} />
+            <div className="text-center mt-8">
+              <a href={HABIBI_MENU_PDF} target="_blank" rel="noopener noreferrer" className="btn-outline-ink">
+                <Download size={15} className="shrink-0" /> Menu PDF
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Order — city selector */}
-      <section id="order" className="paper py-16 md:py-24 scroll-mt-24">
+      <section id="order" className="bg-sand py-16 md:py-24 scroll-mt-24">
         <div className="container-x max-w-3xl">
           <SectionHeading kicker="Order Habibi" title="Delivered to your door" subtitle="Online-only. Pick your city, then your app." align="left" className="!mx-0 mb-10" />
           <HabibiCityPicker />

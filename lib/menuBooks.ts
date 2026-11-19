@@ -36,6 +36,11 @@ export const MENU_BOOKS: Record<string, MenuBookPage[]> = {
     { src: '/menus/canteen-vasant-kunj/p04.jpg', w: 2200, h: 1556 },
     { src: '/menus/canteen-vasant-kunj/p05.jpg', w: 2200, h: 1556 },
   ],
+  // Mahabelly Habibi (/menu/habibi): 2-page menu. PDF: /menus/habibi-menu-latest.pdf
+  habibi: [
+    { src: '/menus/habibi/habibi-menu-page-1.jpg', w: 1654, h: 2339 },
+    { src: '/menus/habibi/habibi-menu-page-2.jpg', w: 1654, h: 2339 },
+  ],
   sonipat: [
     { src: '/menus/sonipat/p01.jpg', w: 2200, h: 1556 },
     { src: '/menus/sonipat/p02.jpg', w: 2200, h: 1556 },
